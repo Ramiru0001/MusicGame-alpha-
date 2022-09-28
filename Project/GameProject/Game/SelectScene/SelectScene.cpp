@@ -28,6 +28,7 @@ void SelectScene::Update() {
 			ShareNum::GameNum++;
 		}
 	}
+	//選択中にエンターキーを押したらそのゲームが実行される
 	if (PUSH(CInput::eButton10)) {
 		Base::KillAll();
 		switch (ShareNum::GameNum) {
