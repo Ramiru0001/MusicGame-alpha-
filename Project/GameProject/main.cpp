@@ -1,6 +1,7 @@
 #include <GLLibrary.h>
 #include "Base/Base.h"
 #include "Title/Title.h"
+#include "Game/Play.h"
 #define SCREEN_WIDTH 1920
 #define SCREEN_HEIGHT 1080
 
@@ -86,7 +87,8 @@ void Init(void)
 	//ƒQ[ƒ€‹N“®‚Éˆê“x‚¾‚¯ŒÄ‚Î‚ê‚é
 	//-----------------------------------------------------
 
-	Base::Add(new Title());
+	//Base::Add(new Title());
+	Base::Add(new Play());
 }
 
 

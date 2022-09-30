@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="Base\Base.cpp" />
     <ClCompile Include="Game\MiniGame\Gahaku.cpp" />
+    <ClCompile Include="Game\Play.cpp" />
     <ClCompile Include="Game\SelectScene\SelectScene.cpp" />
     <ClCompile Include="Game\ShareNum.cpp" />
     <ClCompile Include="main.cpp" />
@@ -21,6 +22,7 @@
   <ItemGroup>
     <ClInclude Include="Base\Base.h" />
     <ClInclude Include="Game\MiniGame\Gahaku.h" />
+    <ClInclude Include="Game\Play.h" />
     <ClInclude Include="Game\SelectScene\SelectScene.h" />
     <ClInclude Include="Game\ShareNum.h" />
     <ClInclude Include="Title\Title.h" />

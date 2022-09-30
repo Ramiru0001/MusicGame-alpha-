@@ -3,6 +3,7 @@
 enum {
 	eType_Scene,
 	eType_Game,
+	eType_Play,
 };
 
 //d—Í‰Á‘¬“x

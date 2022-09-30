@@ -17,6 +17,9 @@
     <ClCompile Include="Game\MiniGame\Gahaku.cpp">
       <Filter>Game\MiniGame</Filter>
     </ClCompile>
+    <ClCompile Include="Game\Play.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Game">
@@ -50,6 +53,9 @@
     </ClInclude>
     <ClInclude Include="Game\MiniGame\Gahaku.h">
       <Filter>Game\MiniGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Play.h">
+      <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
