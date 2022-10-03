@@ -1,5 +1,6 @@
 #include <GLLibrary.h>
 #include "Base/Base.h"
+#include "Game/Play.h"
 #define SCREEN_WIDTH 1920
 #define SCREEN_HEIGHT 1080
 
@@ -86,6 +87,9 @@ void Init(void)
 	//-----------------------------------------------------
 
 	//Base::Add(new Title());
+	ADD_RESOURCE("Notes",CImage::CreateImage("Image/Notes.png"));;
+	ADD_RESOURCE("Lane", CImage::CreateImage("Image/Lane.png"));
+	Base::Add(new Play());
 }
 
 
