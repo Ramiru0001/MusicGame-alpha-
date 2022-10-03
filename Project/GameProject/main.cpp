@@ -1,7 +1,5 @@
 #include <GLLibrary.h>
 #include "Base/Base.h"
-#include "Title/Title.h"
-#include "Game/Play.h"
 #define SCREEN_WIDTH 1920
 #define SCREEN_HEIGHT 1080
 
@@ -72,8 +70,8 @@ void Init(void)
 
 	//ƒJƒƒ‰‰Šú‰»
 	CCamera::GetCamera()->LookAt(CVector3D(5, 5, 5),
-		CVector3D(0, 0, 0),
-		CVector3D(0.0, 1.0, 0.0));
+	CVector3D(0, 0, 0),
+	CVector3D(0.0, 1.0, 0.0));
 
 	SetCurrentDirectory("data");
 
@@ -88,7 +86,6 @@ void Init(void)
 	//-----------------------------------------------------
 
 	//Base::Add(new Title());
-	Base::Add(new Play());
 }
 
 

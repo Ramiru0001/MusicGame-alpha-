@@ -5,21 +5,6 @@
     <ClCompile Include="Base\Base.cpp">
       <Filter>Base</Filter>
     </ClCompile>
-    <ClCompile Include="Title\Title.cpp">
-      <Filter>Title</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\SelectScene\SelectScene.cpp">
-      <Filter>Game\SelectScene</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\ShareNum.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\MiniGame\Gahaku.cpp">
-      <Filter>Game\MiniGame</Filter>
-    </ClCompile>
-    <ClCompile Include="Game\Play.cpp">
-      <Filter>Game</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Game">
@@ -31,31 +16,10 @@
     <Filter Include="Title">
       <UniqueIdentifier>{244737a8-20cd-442d-870d-0365f1ad07ca}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Game\SelectScene">
-      <UniqueIdentifier>{89aeeabc-5583-46c7-bee8-8cd0d6f339df}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Game\MiniGame">
-      <UniqueIdentifier>{e32d776a-80bc-41f2-8779-19494fc88cfd}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base\Base.h">
       <Filter>Base</Filter>
-    </ClInclude>
-    <ClInclude Include="Title\Title.h">
-      <Filter>Title</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\SelectScene\SelectScene.h">
-      <Filter>Game\SelectScene</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\ShareNum.h">
-      <Filter>Game</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\MiniGame\Gahaku.h">
-      <Filter>Game\MiniGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Game\Play.h">
-      <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
