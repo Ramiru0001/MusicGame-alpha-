@@ -18,5 +18,6 @@ void Play::ImageSet() {
 	CircleNotes.SetRect(263, 157, 596, 493);
 	SquareNotes.SetRect(767, 445, 1154, 636);
 	//CircleNotes.SetSize(240,240);
-	SquareNotes.SetSize(240, 120);
+	SquareNotes.SetSize(236, 118);
+	SquareNotes.SetPos(5, 100);
 }
