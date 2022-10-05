@@ -1,7 +1,6 @@
 #pragma once
 #include <Gllibrary.h>
 #include "../Base/Base.h"
-
 class SoundBar :public Base {
 public:
 	enum {

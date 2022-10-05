@@ -23,6 +23,5 @@ void Play::Update() {
 }
 void Play::ImageSet() {
 	Lane = COPY_RESOURCE("Lane", CImage);
-	//SoundBar = COPY_RESOURCE("SoundBar", CImage);
 	NotesBar = COPY_RESOURCE("NotesBar", CImage);
 }

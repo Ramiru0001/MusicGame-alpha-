@@ -1,6 +1,7 @@
 #include <GLLibrary.h>
 #include "Base/Base.h"
 #include "Game/Play.h"
+#include "Game/SelectScene/SelectScene.h"
 #define SCREEN_WIDTH 1920
 #define SCREEN_HEIGHT 1080
 
@@ -91,7 +92,7 @@ void Init(void)
 	ADD_RESOURCE("Lane", CImage::CreateImage("Image/Lane.png"));
 	ADD_RESOURCE("SoundBar", CImage::CreateImage("Image/SoundBar.png"));
 	ADD_RESOURCE("NotesBar", CImage::CreateImage("Image/NotesBar.png"));
-	Base::Add(new Play());
+	Base::Add(new SelectScene());
 }
 
 

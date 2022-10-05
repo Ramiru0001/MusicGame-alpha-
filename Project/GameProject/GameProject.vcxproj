@@ -14,6 +14,8 @@
     <ClCompile Include="Base\Base.cpp" />
     <ClCompile Include="Game\Notes.cpp" />
     <ClCompile Include="Game\Play.cpp" />
+    <ClCompile Include="Game\SelectScene\SelectScene.cpp" />
+    <ClCompile Include="Game\ShareNum.cpp" />
     <ClCompile Include="Game\SoundBar.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -21,6 +23,8 @@
     <ClInclude Include="Base\Base.h" />
     <ClInclude Include="Game\Notes.h" />
     <ClInclude Include="Game\Play.h" />
+    <ClInclude Include="Game\SelectScene\SelectScene.h" />
+    <ClInclude Include="Game\ShareNum.h" />
     <ClInclude Include="Game\SoundBar.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -14,6 +14,12 @@
     <ClCompile Include="Game\SoundBar.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="Game\SelectScene\SelectScene.cpp">
+      <Filter>Game\SelectScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Game\ShareNum.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Game">
@@ -24,6 +30,9 @@
     </Filter>
     <Filter Include="Title">
       <UniqueIdentifier>{244737a8-20cd-442d-870d-0365f1ad07ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\SelectScene">
+      <UniqueIdentifier>{71e95445-4e19-440f-b1c2-6d3133bea17b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +46,12 @@
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Game\SoundBar.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\SelectScene\SelectScene.h">
+      <Filter>Game\SelectScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\ShareNum.h">
       <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>
