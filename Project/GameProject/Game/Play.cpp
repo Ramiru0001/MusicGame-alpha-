@@ -1,22 +1,21 @@
 #include "Play.h"
+#include "Notes.h"
 Play::Play(): Base(eType_Play){
 	ImageSet();
 	video = new CVideo("Movie/LeanOn.mp4");
 	video->Play();
+	Base::Add(new Notes(0, 100));
 }
 void Play::Draw() {
 	video->Draw();
-	SquareNotes.Draw();
 	Lane.Draw();
+	SoundBar.Draw();
+	NotesBar.Draw();
 }
 void Play::Update() {
 }
 void Play::ImageSet() {
-	CircleNotes = COPY_RESOURCE("Notes", CImage);
-	SquareNotes = COPY_RESOURCE("Notes", CImage);
 	Lane = COPY_RESOURCE("Lane", CImage);
-	CircleNotes.SetRect(263, 157, 596, 493);
-	SquareNotes.SetRect(767, 445, 1154, 636);
-	//CircleNotes.SetSize(240,240);
-	SquareNotes.SetSize(240, 120);
+	SoundBar = COPY_RESOURCE("SoundBar", CImage);
+	NotesBar = COPY_RESOURCE("NotesBar", CImage);
 }

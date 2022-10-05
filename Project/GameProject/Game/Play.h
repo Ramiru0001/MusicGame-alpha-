@@ -4,8 +4,8 @@
 class Play :public Base {
 private:
 	CImage Lane;
-	CImage CircleNotes;
-	CImage SquareNotes;
+	CImage SoundBar;
+	CImage NotesBar;
 	CVideo* video;
 public:
 	Play();

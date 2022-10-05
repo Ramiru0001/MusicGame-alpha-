@@ -39,10 +39,10 @@ void Init(void)
 	CFPS::Init();
 	//É{É^ÉìÇÃê›íË
 	CInput::Init();
-	CInput::SetButton(0, CInput::eButton1, 'Z');
-	CInput::SetButton(0, CInput::eButton2, 'X');
-	CInput::SetButton(0, CInput::eButton3, 'C');
-	CInput::SetButton(0, CInput::eButton4, 'V');
+	CInput::SetButton(0, CInput::eButton1, 'A');
+	CInput::SetButton(0, CInput::eButton2, 'S');
+	CInput::SetButton(0, CInput::eButton3, 'D');
+	CInput::SetButton(0, CInput::eButton4, 'F');
 	CInput::SetButton(0, CInput::eButton5, VK_SPACE);
 	CInput::SetButton(0, CInput::eButton10, VK_RETURN);
 	CInput::SetButton(0, CInput::eUp, VK_UP);
@@ -89,6 +89,8 @@ void Init(void)
 	//Base::Add(new Title());
 	ADD_RESOURCE("Notes",CImage::CreateImage("Image/Notes.png"));;
 	ADD_RESOURCE("Lane", CImage::CreateImage("Image/Lane.png"));
+	ADD_RESOURCE("SoundBar", CImage::CreateImage("Image/SoundBar.png"));
+	ADD_RESOURCE("NotesBar", CImage::CreateImage("Image/NotesBar.png"));
 	Base::Add(new Play());
 }
 

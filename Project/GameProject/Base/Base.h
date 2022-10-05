@@ -4,6 +4,7 @@ enum {
 	eType_Scene,
 	eType_Game,
 	eType_Play,
+	eType_Notes,
 };
 
 //d—Í‰Á‘¬“x

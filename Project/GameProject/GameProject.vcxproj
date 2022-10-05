@@ -12,11 +12,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Base\Base.cpp" />
+    <ClCompile Include="Game\Notes.cpp" />
     <ClCompile Include="Game\Play.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base\Base.h" />
+    <ClInclude Include="Game\Notes.h" />
     <ClInclude Include="Game\Play.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
