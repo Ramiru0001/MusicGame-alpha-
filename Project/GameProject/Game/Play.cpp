@@ -16,13 +16,13 @@ Play::Play() : Base(eType_Play) {
 void Play::Draw() {
 	video->Draw();
 	Lane.Draw();
-	SoundBar.Draw();
+	//SoundBar.Draw();
 	NotesBar.Draw();
 }
 void Play::Update() {
 }
 void Play::ImageSet() {
 	Lane = COPY_RESOURCE("Lane", CImage);
-	SoundBar = COPY_RESOURCE("SoundBar", CImage);
+	//SoundBar = COPY_RESOURCE("SoundBar", CImage);
 	NotesBar = COPY_RESOURCE("NotesBar", CImage);
 }
