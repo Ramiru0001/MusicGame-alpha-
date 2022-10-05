@@ -1,5 +1,6 @@
 #include "Play.h"
 Play::Play(): Base(eType_Play){
+	ImageSet();
 	video = new CVideo("Movie/LeanOn.mp4");
 	video->Play();
 }
