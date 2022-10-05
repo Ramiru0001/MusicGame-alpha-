@@ -92,6 +92,7 @@ void Init(void)
 	ADD_RESOURCE("Lane", CImage::CreateImage("Image/Lane.png"));
 	ADD_RESOURCE("SoundBar", CImage::CreateImage("Image/SoundBar.png"));
 	ADD_RESOURCE("NotesBar", CImage::CreateImage("Image/NotesBar.png"));
+	SOUND("Tap")->Load("Sound/TapSound.wav");
 	Base::Add(new SelectScene());
 }
 

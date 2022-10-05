@@ -46,28 +46,28 @@ void Notes::CheckHitNotes() {
 	if (PUSH(CInput::eButton1)) {
 		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 5) {
 			//Base::Add(new Hit(m_pos));
-			//SOUND("Tap")->Play();
+			SOUND("Tap")->Play();
 			m_kill = true;
 		}
 	}
 	if (PUSH(CInput::eButton2)) {
 		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 241) {
 			//Base::Add(new Hit(m_pos));
-			//SOUND("Tap")->Play();
+			SOUND("Tap")->Play();
 			m_kill = true;
 		}
 	}
 	if (PUSH(CInput::eButton3)) {
 		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 482) {
 			//Base::Add(new Hit(m_pos));
-			//SOUND("Tap")->Play();
+			SOUND("Tap")->Play();
 			m_kill = true;
 		}
 	}
 	if (PUSH(CInput::eButton4)) {
 		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 723) {
 			//Base::Add(new Hit(m_pos));
-			//SOUND("Tap")->Play();
+			SOUND("Tap")->Play();
 			m_kill = true;
 		}
 	}
