@@ -28,51 +28,60 @@ Notes::Notes(int area,int time) :Base(eType_Notes) {
 	m_time = time;
 }
 void Notes::Draw() {
-	/*if (state == true) {
-		SquareNotes.SetPos(m_pos);
-		SquareNotes.Draw();
-	}*/
-	m_img.SetPos(m_pos);
-	m_img.Draw();
+	if (state == true) {
+		m_img.SetPos(m_pos);
+		m_img.Draw();
+	}
 	//printf("%d %d\n", m_pos.x,m_pos.y);
 };
 void Notes::Update() {
 	if (state == true) {
-		//CheckHitNotes();
+		CheckHitNotes();
 		m_pos.y += 8;
 	}
-	//printf("%d %d\n", m_pos.x, m_pos.y);
-	std::cout << m_pos.x <<" " << m_pos.y << std::endl;
-	std::cout << CenterRight_pos.x << " " << CenterRight_pos.y << std::endl;
 	Timer();
 }
 void Notes::CheckHitNotes() {
-	/*if (PUSH(CInput::eButton1)) {
-		if (620 < m_pos.y && m_pos.y < 680 && m_pos.x == 113) {
-			Base::Add(new Hit(m_pos));
-			SOUND("Tap")->Play();
+	if (PUSH(CInput::eButton1)) {
+		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 5) {
+			//Base::Add(new Hit(m_pos));
+			//SOUND("Tap")->Play();
 			m_kill = true;
 		}
 	}
 	if (PUSH(CInput::eButton2)) {
-		if (620 < m_pos.y && m_pos.y < 680 && m_pos.x == 1167) {
-			Base::Add(new Hit(m_pos));
-			SOUND("Tap")->Play();
+		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 241) {
+			//Base::Add(new Hit(m_pos));
+			//SOUND("Tap")->Play();
 			m_kill = true;
 		}
-	}*/
+	}
+	if (PUSH(CInput::eButton3)) {
+		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 482) {
+			//Base::Add(new Hit(m_pos));
+			//SOUND("Tap")->Play();
+			m_kill = true;
+		}
+	}
+	if (PUSH(CInput::eButton4)) {
+		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 723) {
+			//Base::Add(new Hit(m_pos));
+			//SOUND("Tap")->Play();
+			m_kill = true;
+		}
+	}
 }
 void Notes::Timer() {
 	m_time--;
-	/*if (m_time <= 0) {
+	if (m_time <= 0) {
 		state = true;
-	}*/
+	}
 }
 void Notes::ImageSet() {
-	Left_pos = CVector2D(5 + 236 * 0, 0);
-	CenterLeft_pos = CVector2D(5 * 1 + 236 * 1, 0);
-	CenterRight_pos = CVector2D(5 * 2 + 236 * 2 + 5, 0);
-	Right_pos = CVector2D(5 * 3 + 236 * 3 + 5, 0);
+	Left_pos = CVector2D(5, 0);
+	CenterLeft_pos = CVector2D(241, 0);
+	CenterRight_pos = CVector2D(482, 0);
+	Right_pos = CVector2D(723, 0);
 	CircleNotes = COPY_RESOURCE("Notes", CImage);
 	SquareNotes = COPY_RESOURCE("Notes", CImage);
 	CircleNotes.SetRect(263, 157, 596, 493);
