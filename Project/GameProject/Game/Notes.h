@@ -13,6 +13,7 @@ public:
 	//false‚Ìê‡time‚ª0‚É‚È‚é‚Ü‚Å‘Ò‹@
 	bool state = false;
 	int m_time;
+	double m_speed;
 	CImage m_img;
 	CImage CircleNotes;
 	CImage SquareNotes;
@@ -22,11 +23,12 @@ public:
 	CVector2D Left_pos;
 	CVector2D m_pos;
 public:
-	Notes(int area,int time);
+	Notes(int area,int time,int speed);
 	void Draw();
 	void Update();
 	void Collision();
 	void CheckHitNotes();
 	void Timer();
 	void ImageSet();
+	void SpeedSet();
 };

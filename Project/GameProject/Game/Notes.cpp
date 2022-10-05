@@ -2,9 +2,12 @@
 #include <iostream>
 //#include "Hit.h"
 
-Notes::Notes(int area,int time) :Base(eType_Notes) {
+Notes::Notes(int area,int time,int speed) :Base(eType_Notes) {
 	ImageSet();
-	if (time <= 0) {
+	m_time = time;
+	m_speed = speed;
+	SpeedSet();
+	if (m_time <= 0) {
 		state = true;
 	}
 	switch (area) {
@@ -25,19 +28,17 @@ Notes::Notes(int area,int time) :Base(eType_Notes) {
 		m_img = SquareNotes;
 		break;
 	}
-	m_time = time;
 }
 void Notes::Draw() {
 	if (state == true) {
 		m_img.SetPos(m_pos);
 		m_img.Draw();
 	}
-	//printf("%d %d\n", m_pos.x,m_pos.y);
 };
 void Notes::Update() {
 	if (state == true) {
 		CheckHitNotes();
-		m_pos.y += 8;
+		m_pos.y += m_speed;
 	}
 	Timer();
 }
@@ -76,6 +77,7 @@ void Notes::Timer() {
 	if (m_time <= 0) {
 		state = true;
 	}
+	//std::cout << m_time << std::endl;
 }
 void Notes::ImageSet() {
 	Left_pos = CVector2D(5, 0);
@@ -89,4 +91,15 @@ void Notes::ImageSet() {
 	//CircleNotes.SetSize(240,240);
 	SquareNotes.SetSize(236, 118);
 	//SquareNotes.SetPos(5, 100);
+}
+void Notes::SpeedSet() {
+	//Šî€‚ðspeed = 8‚Æ‚·‚é
+	if(m_speed < 8) {
+		int temp= 780 / m_speed - 780 / 8;
+		m_time -= temp;
+	}
+	else if (m_speed > 8) {
+		int temp = 780 / 8 - 780 / m_speed;
+		m_time +=temp;
+	}
 }
