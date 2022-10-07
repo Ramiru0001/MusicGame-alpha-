@@ -6,6 +6,7 @@ enum {
 	eType_Play,
 	eType_Notes,
 	eType_Bar,
+	eType_Score
 };
 
 //d—Í‰Á‘¬“x

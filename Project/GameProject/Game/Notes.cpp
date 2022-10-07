@@ -1,4 +1,5 @@
 #include "Notes.h"
+#include "ShareNum.h"
 #include <iostream>
 //#include "Hit.h"
 
@@ -43,16 +44,16 @@ void Notes::Update() {
 	Timer();
 }
 void Notes::CheckHitNotes() {
-	if (895 < m_pos.y + 118 && m_pos.y + 118 < 905 ) {
-		//Base::Add(new Hit(m_pos));
+	/*if (895 < m_pos.y + 118 && m_pos.y + 118 < 905 ) {
 		SOUND("Tap")->Play();
 		m_kill = true;
-	}
+	}*/
 	if (PUSH(CInput::eButton1)) {
 		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 5) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
+			ShareNum::score += 500;
 		}
 	}
 	if (PUSH(CInput::eButton2)) {
@@ -60,6 +61,7 @@ void Notes::CheckHitNotes() {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
+			ShareNum::score += 500;
 		}
 	}
 	if (PUSH(CInput::eButton3)) {
@@ -67,6 +69,7 @@ void Notes::CheckHitNotes() {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
+			ShareNum::score += 500;
 		}
 	}
 	if (PUSH(CInput::eButton4)) {
@@ -74,6 +77,7 @@ void Notes::CheckHitNotes() {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
+			ShareNum::score += 500;
 		}
 	}
 }

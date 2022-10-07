@@ -1,10 +1,12 @@
 #include "Play.h"
 #include "Notes.h"
 #include "SoundBar.h"
+#include "Score.h"
 #include "SelectScene/SelectScene.h" 
 #include <Gllibrary.h>
 #include <iostream>
-Play::Play(int ChoiceSound) : Base(eType_Play) {
+Play::Play(int ChoiceSound) : Base(eType_Play),
+score_text("C:\\Windows\\Fonts\\msgothic.ttc", 64) {
 	glClearColor(0, 0, 0, 0);
 	CountDownToStart = 190;
 	CountUpToEnd = 0;
@@ -44,6 +46,7 @@ void Play::LeanOn() {
 	video->Play();
 	OneNotes = 18.125;
 	Base::Add(new SoundBar(0));
+	Base;; Add(new Score());
 	NotesSet();
 }
 void Play::NotesPreSet(int SetNum) {
@@ -51,11 +54,11 @@ void Play::NotesPreSet(int SetNum) {
 	case 0:
 		Base::Add(new Notes(0, OneNotes * 0 + NotesCount, 5));
 		Base::Add(new Notes(1, OneNotes * 2 + NotesCount, 8));
-		Base::Add(new Notes(2, OneNotes * 4 + NotesCount, 10));
+		Base::Add(new Notes(2, OneNotes * 4 + NotesCount, 20));
 	}
 	switch (SoundNum) {
 	case eNum_LeanOn:
-		NotesCount += 145.3;
+		NotesCount += 145.1;
 	}
 }
 void Play::NotesSet() {

@@ -9,6 +9,7 @@ private:
 	CImage Lane;
 	CImage NotesBar;
 	CVideo* video;
+	CFont score_text;
 	int CountDownToStart;
 	int CountUpToEnd;
 	int SoundNum;
