@@ -4,7 +4,7 @@
 
 Notes::Notes(int area,int time,int speed) :Base(eType_Notes) {
 	ImageSet();
-	m_time = time;
+	m_time = time + 180;
 	m_speed = speed;
 	SpeedSet();
 	if (m_time <= 0) {
@@ -43,6 +43,11 @@ void Notes::Update() {
 	Timer();
 }
 void Notes::CheckHitNotes() {
+	if (895 < m_pos.y + 118 && m_pos.y + 118 < 905 ) {
+		//Base::Add(new Hit(m_pos));
+		SOUND("Tap")->Play();
+		m_kill = true;
+	}
 	if (PUSH(CInput::eButton1)) {
 		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 5) {
 			//Base::Add(new Hit(m_pos));

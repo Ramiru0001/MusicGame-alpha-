@@ -5,6 +5,7 @@
 SelectScene::SelectScene() :Base(eType_Scene)
 , title_text("C:\\Windows\\Fonts\\msgothic.ttc", 64)
 , select_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 80) {
+	glClearColor(1.0, 1.0, 1.0, 1.0);
 	ShareNum::GameNum = 0;
 }
 void SelectScene::Draw() {
@@ -32,8 +33,8 @@ void SelectScene::Update() {
 	if (PUSH(CInput::eButton10)) {
 		Base::KillAll();
 		switch (ShareNum::GameNum) {
-		case eState_LeanOn:
-			Base::Add(new Play());
+		case LeanOn:
+			Base::Add(new Play(LeanOn));
 			break;
 		}
 	}

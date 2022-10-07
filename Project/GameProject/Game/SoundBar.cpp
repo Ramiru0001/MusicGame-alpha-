@@ -12,6 +12,7 @@ SoundBar::SoundBar(int SoundNum) :Base(eType_Bar) {
 }
 void SoundBar::Update() {
 	SongCount++;
+	std::cout << SongLen << std::endl;
 }
 void SoundBar::ImageSet() {
 	Bar = COPY_RESOURCE("SoundBar", CImage);
@@ -20,8 +21,8 @@ void SoundBar::ImageSet() {
 	BarFrame.SetSize(1920, 15);
 }
 void SoundBar::Draw() {
-	 int BarPos= 1918 * SongCount / 7080;
-	std::cout << BarPos << std::endl;
+	 int BarPos= 1918 * SongCount / SongLen;
+	//std::cout << BarPos << std::endl;
 	Bar.SetRect(1, 20, 1 + BarPos, 31);
 	Bar.SetSize(BarPos, 11);
 	Bar.SetPos(0, 21);

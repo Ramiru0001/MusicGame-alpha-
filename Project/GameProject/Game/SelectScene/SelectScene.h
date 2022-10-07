@@ -6,7 +6,7 @@
 class SelectScene :public Base {
 	enum {
 		//ゲームタイトルのstateを作る
-		eState_LeanOn,
+		LeanOn,
 	};
 private:
 	char game_title[10][100] = { "LeanOn"/*,"ABC","ABC"*/ };
