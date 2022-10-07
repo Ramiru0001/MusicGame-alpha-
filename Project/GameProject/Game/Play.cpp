@@ -52,11 +52,33 @@ void Play::LeanOn() {
 void Play::NotesPreSet(int SetNum) {
 	switch (SetNum) {
 	case 0:
-		Base::Add(new Notes(0, OneNotes * 0 + NotesCount, 5));
-		Base::Add(new Notes(1, OneNotes * 2 + NotesCount, 8));
-		Base::Add(new Notes(2, OneNotes * 4 + NotesCount, 20));
+		Base::Add(new Notes(4, OneNotes * 0 + NotesCount,0,0));
+		//Base::Add(new Notes(1, OneNotes * 2 + NotesCount, 8));
+		//Base::Add(new Notes(2, OneNotes * 4 + NotesCount, 20));
+	case 1:
+		Base::Add(new Notes(0, OneNotes * 0 + NotesCount, 8));
+		Base::Add(new Notes(2, OneNotes * 0 + NotesCount, 8));
+	case 2:
+		Base::Add(new Notes(1, OneNotes * 1.9+ NotesCount, 8));
+		Base::Add(new Notes(3, OneNotes * 1.9 + NotesCount, 8));
+	case 3:
+		Base::Add(new Notes(0, OneNotes * 3.5 + NotesCount, 8));
+		Base::Add(new Notes(3, OneNotes * 3.5+ NotesCount, 8));
+	case 4:
+		Base::Add(new Notes(1, OneNotes * 5 + NotesCount, 8));
+		Base::Add(new Notes(2, OneNotes * 5 + NotesCount, 8));
+	case 5:
+		Base::Add(new Notes(0, OneNotes * 7.3 + NotesCount, 8));
+		Base::Add(new Notes(1, OneNotes * 7.3 + NotesCount, 8));
+	case 6:
+		Base::Add(new Notes(0, OneNotes * 8.6 + NotesCount, 10));
+		Base::Add(new Notes(0, OneNotes * 8.2 + NotesCount, 8));
+	case 7:
+		Base::Add(new Notes(3, OneNotes * 9.5 + NotesCount, 3));
+	
 		Base::Add(new Notes(4, OneNotes * 0 + NotesCount, 0, 0));
 	}
+	
 	switch (SoundNum) {
 	case eNum_LeanOn:
 		NotesCount += 145.1;
@@ -65,29 +87,24 @@ void Play::NotesPreSet(int SetNum) {
 void Play::NotesSet() {
 	switch (SoundNum) {
 	case eNum_LeanOn:
-		NotesCount = -117.75;
-		/*Base::Add(new Notes(4, 0, 0,0));
-		Base::Add(new Notes(4, 0, 9,9));
-		Base::Add(new Notes(4, 120, 9, 0));
-		Base::Add(new Notes(4, 240, 0,9));
-		Base::Add(new Notes(4, 360, 9,9));*/
+		NotesCount = -117.75;	
 		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
+		NotesPreSet(1);
+		NotesPreSet(2);
+		NotesPreSet(3);
+		NotesPreSet(4);
+		NotesPreSet(5);
+		NotesPreSet(6);
+		NotesPreSet(7);
+		NotesPreSet(8);
+		NotesPreSet(2);
+		NotesPreSet(1);
+		NotesPreSet(6);
+		NotesPreSet(7);
+		NotesPreSet(3);
+		NotesPreSet(4);
+		NotesPreSet(8);
+		NotesPreSet(5);		NotesPreSet(0);
 		NotesPreSet(0);
 		NotesPreSet(0);
 		NotesPreSet(0);
