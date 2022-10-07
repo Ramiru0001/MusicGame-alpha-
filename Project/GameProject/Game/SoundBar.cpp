@@ -12,7 +12,6 @@ SoundBar::SoundBar(int SoundNum) :Base(eType_Bar) {
 }
 void SoundBar::Update() {
 	SongCount++;
-	std::cout << SongLen << std::endl;
 }
 void SoundBar::ImageSet() {
 	Bar = COPY_RESOURCE("SoundBar", CImage);

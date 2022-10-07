@@ -7,6 +7,7 @@ SelectScene::SelectScene() :Base(eType_Scene)
 , select_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 80) {
 	glClearColor(1.0, 1.0, 1.0, 1.0);
 	ShareNum::GameNum = 0;
+	ShareNum::debug = false;
 }
 void SelectScene::Draw() {
 	//選択中のタイトルを大きく表示
