@@ -52,7 +52,7 @@ void Play::LeanOn() {
 void Play::NotesPreSet(int SetNum) {
 	switch (SetNum) {
 	case 0:
-		//Base::Add(new Notes(0, OneNotes * 0 + NotesCount, 5));
+		Base::Add(new Notes(4, OneNotes * 0 + NotesCount,0,0));
 		//Base::Add(new Notes(1, OneNotes * 2 + NotesCount, 8));
 		//Base::Add(new Notes(2, OneNotes * 4 + NotesCount, 20));
 	case 1:
@@ -76,6 +76,7 @@ void Play::NotesPreSet(int SetNum) {
 	case 7:
 		Base::Add(new Notes(3, OneNotes * 9.5 + NotesCount, 3));
 	
+		Base::Add(new Notes(4, OneNotes * 0 + NotesCount, 0, 0));
 	}
 	
 	switch (SoundNum) {
@@ -86,24 +87,24 @@ void Play::NotesPreSet(int SetNum) {
 void Play::NotesSet() {
 	switch (SoundNum) {
 	case eNum_LeanOn:
-		NotesCount = -117.75;
-		NotesPreSet(1);
-		NotesPreSet(2);
-		NotesPreSet(3);
-		NotesPreSet(4);
-		NotesPreSet(5);
-		NotesPreSet(6);
-		NotesPreSet(7);
-		NotesPreSet(8);
-		NotesPreSet(2);
-		NotesPreSet(1);
-		NotesPreSet(6);
-		NotesPreSet(7);
-		NotesPreSet(3);
-		NotesPreSet(4);
-		NotesPreSet(8);
-		NotesPreSet(5);
+		NotesCount = -117.75;	
 		NotesPreSet(0);
+		NotesPreSet(1);
+		NotesPreSet(2);
+		NotesPreSet(3);
+		NotesPreSet(4);
+		NotesPreSet(5);
+		NotesPreSet(6);
+		NotesPreSet(7);
+		NotesPreSet(8);
+		NotesPreSet(2);
+		NotesPreSet(1);
+		NotesPreSet(6);
+		NotesPreSet(7);
+		NotesPreSet(3);
+		NotesPreSet(4);
+		NotesPreSet(8);
+		NotesPreSet(5);		NotesPreSet(0);
 		NotesPreSet(0);
 		NotesPreSet(0);
 		NotesPreSet(0);
