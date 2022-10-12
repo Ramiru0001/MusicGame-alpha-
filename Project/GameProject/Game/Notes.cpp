@@ -186,7 +186,7 @@ void Notes::RArea(int x,int y) {
 	m_pos.y = 172 + y * 728 / 9;
 }
 void Notes::CountDownToDelete() {
-	if (RNotesCount >= 70) {
+	if (RNotesCount >= 60) {
 		RNotesCountToDelete--;
 		if (RNotesCountToDelete <= 0) {
 			m_kill = true;
