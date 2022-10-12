@@ -64,8 +64,8 @@ void Notes::Draw() {
 	case  eState_RightSide:
 		if (state == true) {
 			RSizeSet();
-			m_img.Draw();
 			CircleNotesFrame.Draw();
+			m_img.Draw();
 		}
 		break;
 	}
@@ -162,7 +162,7 @@ void Notes::LSpeedSet() {
 }
 void Notes::RNotes() {}
 void Notes::RSizeSet() {
-	if (RNotesCount <70) {
+	if (RNotesCount <60) {
 		RNotesCount++;
 	}
 	m_img.SetSize(120, 120);
