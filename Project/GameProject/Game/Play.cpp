@@ -18,6 +18,10 @@ score_text("C:\\Windows\\Fonts\\msgothic.ttc", 64) {
 	switch (ChoiceSound) {
 	case eNum_LeanOn:
 		video = new CVideo("Movie/LeanOn60.mp4");
+		break;
+	case eNum_Baby:
+		video = new CVideo("Movie/Baby.mp4");
+		break;
 	}
 }
 void Play::Draw() {
@@ -39,13 +43,24 @@ void Play::Update() {
 			m_kill = true;
 		}
 		break;
+	case eNum_Baby:
+		if (CountDownToStart == 0) {
+			Baby();
+		}
+		/*if (CountUpToEnd >= 7080) {
+			m_kill = true;
+		}*/
 	}
 }	
 Play::~Play() {
-	std::ofstream Pfile("Score/LeanOn.txt", std::ios_base::app | std::ios_base::in);
+	std::ofstream Lfile("Score/LeanOn.txt", std::ios_base::app | std::ios_base::in);
+	std::ofstream Bfile("Score/Baby.txt", std::ios_base::app | std::ios_base::in);
 	switch (ShareNum::GameNum) {
 	case eNum_LeanOn:
-		Pfile << ShareNum::score << std::endl;
+		Lfile << ShareNum::score << std::endl;
+		break;
+	case eNum_Baby:
+		Bfile << ShareNum::score << std::endl;
 		break;
 	}
 	video->Stop();
@@ -56,11 +71,18 @@ void Play::ImageSet() {
 	Lane = COPY_RESOURCE("Lane", CImage);
 	NotesBar = COPY_RESOURCE("NotesBar", CImage);
 }
+void Play::Baby() {
+	video->Play();
+	//OneNotes = ;
+	Base::Add(new SoundBar(0));
+	Base::Add(new Score());
+	NotesSet();
+}
 void Play::LeanOn() {
 	video->Play();
 	OneNotes = 18.125;
 	Base::Add(new SoundBar(0));
-	Base;; Add(new Score());
+	Base::Add(new Score());
 	NotesSet();
 }
 void Play::NotesPreSet(int SetNum) {
@@ -183,6 +205,10 @@ void Play::NotesPreSet(int SetNum) {
 	switch (SoundNum) {
 	case eNum_LeanOn:
 		NotesCount += 145.1;
+		break;
+	case eNum_Baby:
+		//NotesCount += 145.1;
+		break;
 	}
 }
 void Play::NotesSet() {
@@ -238,6 +264,15 @@ void Play::NotesSet() {
 		NotesPreSet(5);
 		NotesPreSet(0);
 		NotesPreSet(0);
+		NotesPreSet(0);
+	case eNum_Baby:
+		//NotesCount = -117.75;
+		NotesPreSet(0);
+		NotesPreSet(1);
+		NotesPreSet(2);
+		NotesPreSet(3);
+		NotesPreSet(4);
+		NotesPreSet(15);
 		NotesPreSet(0);
 	}
 }

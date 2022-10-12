@@ -5,6 +5,7 @@ class Play :public Base {
 private:
 	enum {
 		eNum_LeanOn,
+		eNum_Baby,
 	};
 	CImage Lane;
 	CImage NotesBar;
@@ -22,6 +23,7 @@ public:
 	void Draw();
 	void Update();
 	void LeanOn();
+	void Baby();
 	void NotesSet();
 	void NotesPreSet(int SetNum);
 };
