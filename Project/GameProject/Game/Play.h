@@ -17,6 +17,7 @@ private:
 	float NotesCount;
 public:
 	Play(int ChoiceSound);
+	~Play();
 	void ImageSet();
 	void Draw();
 	void Update();

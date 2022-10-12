@@ -1,8 +1,6 @@
 #include "Notes.h"
 #include "ShareNum.h"
 #include <iostream>
-//#include "Hit.h"
-
 Notes::Notes(int area,int time,int speed) :Base(eType_Notes) {
 	ImageSet();
 	m_time = time + 180;

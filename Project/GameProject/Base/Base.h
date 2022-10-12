@@ -2,6 +2,7 @@
 #include <GLLibrary.h>
 enum {
 	eType_Scene,
+	eType_Ranking,
 	eType_Game,
 	eType_Play,
 	eType_Notes,

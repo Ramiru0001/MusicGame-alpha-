@@ -18,7 +18,7 @@ void Score::Draw() {
 	}
 }
 void Score::ImageSet() {
-	for (int i = 0; i < 10; i++) {
+	/*for (int i = 0; i < 10; i++) {
 		m_img[i] = COPY_RESOURCE("Number", CImage);
 	}
 	m_img[0].SetRect(0, 16, 13, 32);
@@ -33,6 +33,11 @@ void Score::ImageSet() {
 	m_img[9].SetRect(145, 16, 158, 32);
 	for (int i = 0; i < 10; i++) {
 		m_img[i].SetSize(40, 40);
+	}*/
+	for (int i = 0; i < 10; i++) {
+		m_img[i] = COPY_RESOURCE("Number", CImage);
+		m_img[i].SetRect(i * 39, 0, (i + 1) * 39, 77);
+		m_img[i].SetSize(40, 77);
 	}
 }
 void Score::Update() {

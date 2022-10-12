@@ -1,4 +1,5 @@
 #include "SelectScene.h"
+#include "../Ranking.h"
 #include "../ShareNum.h"
 #include "../Play.h"
 
@@ -8,6 +9,7 @@ SelectScene::SelectScene() :Base(eType_Scene)
 	glClearColor(1.0, 1.0, 1.0, 1.0);
 	ShareNum::GameNum = 0;
 	ShareNum::debug = false;
+	Base::Add(new Ranking(0));
 }
 void SelectScene::Draw() {
 	//選択中のタイトルを大きく表示
