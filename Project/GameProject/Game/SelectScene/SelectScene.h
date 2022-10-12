@@ -12,6 +12,7 @@ private:
 	char game_title[10][100] = { "LeanOn"/*,"ABC","ABC"*/ };
 	CFont title_text;
 	CFont select_title_text;
+	CFont PushEnter_Text;
 public:
 	SelectScene();
 	void Draw();

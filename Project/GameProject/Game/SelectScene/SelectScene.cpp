@@ -5,13 +5,15 @@
 
 SelectScene::SelectScene() :Base(eType_Scene)
 , title_text("C:\\Windows\\Fonts\\msgothic.ttc", 64)
-, select_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 80) {
+, select_title_text("C:\\Windows\\Fonts\\msgothic.ttc", 80)
+, PushEnter_Text("C:\\Windows\\Fonts\\msgothic.ttc", 50) {
 	glClearColor(1.0, 1.0, 1.0, 1.0);
 	ShareNum::GameNum = 0;
 	ShareNum::debug = false;
 	Base::Add(new Ranking(0));
 }
 void SelectScene::Draw() {
+	PushEnter_Text.Draw(1500, 1000, 0, 0, 0, "Push EnterKey");
 	//選択中のタイトルを大きく表示
 	for (int i = 0; i < ShareNum::MaxGame; i++) {
 		if (ShareNum::GameNum != i) {

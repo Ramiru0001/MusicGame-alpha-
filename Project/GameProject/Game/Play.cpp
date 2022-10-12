@@ -3,6 +3,7 @@
 #include "SoundBar.h"
 #include "Score.h"
 #include "SelectScene/SelectScene.h" 
+#include "ScoreScene.h"
 #include <Gllibrary.h>
 #include <iostream>
 #include <fstream>
@@ -33,7 +34,7 @@ void Play::Update() {
 		if (CountDownToStart == 0) {
 			LeanOn();
 		}
-		if (CountUpToEnd >= 300/*7080*/) {
+		if (CountUpToEnd >= /*300*/7080) {
 			m_kill = true;
 		}
 		break;
@@ -48,7 +49,7 @@ Play::~Play() {
 	}
 	video->Stop();
 	Base::KillAll();
-	Base::Add(new SelectScene());
+	Base::Add(new ScoreScene());
 }
 void Play::ImageSet() {
 	Lane = COPY_RESOURCE("Lane", CImage);

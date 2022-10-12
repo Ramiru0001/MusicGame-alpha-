@@ -1,6 +1,7 @@
 #include <GLLibrary.h>
 #include "Base/Base.h"
 #include "Game/Play.h"
+#include "Game/ScoreScene.h"
 #include "Game/SelectScene/SelectScene.h"
 #define SCREEN_WIDTH 1920
 #define SCREEN_HEIGHT 1080
@@ -98,8 +99,6 @@ void Init(void)
 	SOUND("Tap")->Load("Sound/TapSound.wav");
 	Base::Add(new SelectScene());
 }
-
-
 void Release()
 {
 	CLoadThread::ClearInstance();
