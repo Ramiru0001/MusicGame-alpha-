@@ -62,10 +62,39 @@ void Ranking::LeanOn() {
 		}
 	}
 }
+void Ranking::Baby() {
+	std::fstream file("Score/Baby.txt", std::ios::in);
+
+	//ÉfÅ[É^ÇÃì«Ç›éÊÇË
+	int i = 0;
+	for (i = 0; i < 10000; i++) {
+		file >> data[i];
+		m_score[i] = atoi(data[i].c_str());
+		file.seekp(+2, std::ios::cur);
+		if (file.eof()) {
+			i--;
+			break;
+		}
+	}
+	max = i;
+	//ëÂÇ´Ç¢èáÇ…ï¿Ç◊ë÷Ç¶
+	for (int k = max; k >= 1; k--) {
+		for (int m = k - 1; m >= 0; m--) {
+			if (m_score[k] > m_score[m]) {
+				int w = m_score[k];
+				m_score[k] = m_score[m];
+				m_score[m] = w;
+			}
+		}
+	}
+}
 void Ranking::Update() {
 	switch (ShareNum::GameNum) {
 	case eState_LeanOn:
 		LeanOn();
+		break;
+	case eState_Baby:
+		Baby();
 		break;
 	}
 }

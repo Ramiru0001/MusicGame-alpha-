@@ -41,6 +41,9 @@ void SelectScene::Update() {
 		case LeanOn:
 			Base::Add(new Play(LeanOn));
 			break;
+		case Baby:
+			Base::Add(new Play(Baby));
+			break;
 		}
 	}
 }

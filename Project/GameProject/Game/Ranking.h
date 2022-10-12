@@ -5,6 +5,7 @@ class Ranking :public Base {
 public:
 	enum {
 		eState_LeanOn,
+		eState_Baby,
 	};
 	int max;
 	int SoundNum;
@@ -21,5 +22,6 @@ public:
 	//数字画像の読み込み、切り取り、サイズセット
 	void ImageSet();
 	void LeanOn();
+	void Baby();
 	void Update();
 };

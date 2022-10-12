@@ -44,7 +44,7 @@ Notes::Notes(int area, int time, int x,int y) :Base(eType_Notes) {
 		state = true;
 	}
 	RNotesCount = 0;
-	RNotesCountToDelete = 20;
+	RNotesCountToDelete = 10;
 	RArea(x,y);
 	m_img = CircleNotes;
 }
@@ -94,7 +94,7 @@ void Notes::LCheckHitNotes() {
 		m_kill = true;
 	}*/
 	if (PUSH(CInput::eButton1)) {
-		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 5) {
+		if (6 > m_time > -6 && m_pos.x == 5) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
@@ -102,7 +102,7 @@ void Notes::LCheckHitNotes() {
 		}
 	}
 	if (PUSH(CInput::eButton2)) {
-		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 245) {
+		if (6 > m_time > -6 && m_pos.x == 245) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
@@ -110,7 +110,7 @@ void Notes::LCheckHitNotes() {
 		}
 	}
 	if (PUSH(CInput::eButton3)) {
-		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 485) {
+		if (6 > m_time > -6 && m_pos.x == 485) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
@@ -118,7 +118,7 @@ void Notes::LCheckHitNotes() {
 		}
 	}
 	if (PUSH(CInput::eButton4)) {
-		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 725) {
+		if (6 > m_time > -6 && m_pos.x == 725) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
@@ -170,7 +170,7 @@ void Notes::RSizeSet() {
 }
 void Notes::RCheckHitNotes() {
 	CVector2D mouse_pos = CInput::GetMousePoint();
-	if (PUSH(CInput::eMouseL) && RNotesCount>=50) {
+	if (PUSH(CInput::eMouseL) && RNotesCount>=58) {
 		if (std::pow((mouse_pos.x - m_pos.x - 60), 2.0) + std::pow((mouse_pos.y - m_pos.y - 60), 2.0) <= 3600 ) {
 			SOUND("Tap")->Play();
 			m_kill = true;
