@@ -5,6 +5,7 @@
 #include "SelectScene/SelectScene.h" 
 #include <Gllibrary.h>
 #include <iostream>
+#include <fstream>
 Play::Play(int ChoiceSound) : Base(eType_Play),
 score_text("C:\\Windows\\Fonts\\msgothic.ttc", 64) {
 	glClearColor(0, 0, 0, 0);
@@ -27,16 +28,27 @@ void Play::Draw() {
 void Play::Update() {
 	CountDownToStart--;
 	CountUpToEnd++;
-	if (CountDownToStart == 0) {
-		switch (SoundNum) {
-		case eNum_LeanOn:
+	switch (ShareNum::GameNum) {
+	case eNum_LeanOn:
+		if (CountDownToStart == 0) {
 			LeanOn();
 		}
+		if (CountUpToEnd >= 300/*7080*/) {
+			m_kill = true;
+		}
+		break;
 	}
-	if (CountUpToEnd >= 7080) {
-		Base::KillAll();
-		Base::Add(new SelectScene());
+}	
+Play::~Play() {
+	std::ofstream Pfile("Score/LeanOn.txt", std::ios_base::app | std::ios_base::in);
+	switch (ShareNum::GameNum) {
+	case eNum_LeanOn:
+		Pfile << ShareNum::score << std::endl;
+		break;
 	}
+	video->Stop();
+	Base::KillAll();
+	Base::Add(new SelectScene());
 }
 void Play::ImageSet() {
 	Lane = COPY_RESOURCE("Lane", CImage);

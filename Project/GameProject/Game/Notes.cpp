@@ -104,7 +104,7 @@ void Notes::LCheckHitNotes() {
 		}
 	}
 	if (PUSH(CInput::eButton2)) {
-		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 241) {
+		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 245) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
@@ -112,7 +112,7 @@ void Notes::LCheckHitNotes() {
 		}
 	}
 	if (PUSH(CInput::eButton3)) {
-		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 482) {
+		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 485) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
@@ -120,7 +120,7 @@ void Notes::LCheckHitNotes() {
 		}
 	}
 	if (PUSH(CInput::eButton4)) {
-		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 723) {
+		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 725) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
