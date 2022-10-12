@@ -7,6 +7,7 @@
 #include <Gllibrary.h>
 #include <iostream>
 #include <fstream>
+#include "../Base/Base.h"
 Play::Play(int ChoiceSound) : Base(eType_Play),
 score_text("C:\\Windows\\Fonts\\msgothic.ttc", 64) {
 	glClearColor(0, 0, 0, 0);
@@ -34,7 +35,7 @@ void Play::Update() {
 		if (CountDownToStart == 0) {
 			LeanOn();
 		}
-		if (CountUpToEnd >= /*300*/7080) {
+		if (CountUpToEnd >= 7080) {
 			m_kill = true;
 		}
 		break;
@@ -73,6 +74,32 @@ void Play::NotesPreSet(int SetNum) {
 		Base::Add(new Notes(4, OneNotes * 47 + NotesCount, 0, 6));
 		Base::Add(new Notes(4, OneNotes * 59 + NotesCount, 5, 5));
 		Base::Add(new Notes(4, OneNotes * 78 + NotesCount, 4, 9));
+		Base::Add(new Notes(4, OneNotes * 86 + NotesCount, 7, 2));
+		Base::Add(new Notes(4, OneNotes * 104 + NotesCount, 6, 6));
+		Base::Add(new Notes(4, OneNotes * 112 + NotesCount, 4, 1));
+		Base::Add(new Notes(4, OneNotes * 123 + NotesCount, 9, 4));
+		Base::Add(new Notes(4, OneNotes * 137 + NotesCount, 2, 1));
+		Base::Add(new Notes(4, OneNotes * 144 + NotesCount, 3, 6));
+		Base::Add(new Notes(4, OneNotes * 170 + NotesCount, 8, 7));
+		Base::Add(new Notes(4, OneNotes * 188 + NotesCount, 4, 2));
+		Base::Add(new Notes(4, OneNotes * 199 + NotesCount, 2, 6));
+		Base::Add(new Notes(4, OneNotes * 210 + NotesCount, 0, 7));
+
+		Base::Add(new Notes(4, OneNotes * 270 + NotesCount, 0, 0));
+		Base::Add(new Notes(4, OneNotes * 275 + NotesCount, 1, 0));
+		Base::Add(new Notes(4, OneNotes * 280 + NotesCount, 2, 0));
+		Base::Add(new Notes(4, OneNotes * 285 + NotesCount, 3, 0));
+		Base::Add(new Notes(4, OneNotes * 290 + NotesCount, 4, 0));
+		Base::Add(new Notes(4, OneNotes * 295 + NotesCount, 5, 0));
+
+		Base::Add(new Notes(4, OneNotes * 310 + NotesCount, 2, 2));
+		Base::Add(new Notes(4, OneNotes * 330 + NotesCount, 4, 8));
+		Base::Add(new Notes(4, OneNotes * 345 + NotesCount, 3, 5));
+		Base::Add(new Notes(4, OneNotes * 354 + NotesCount, 9, 0));
+		Base::Add(new Notes(4, OneNotes * 367 + NotesCount, 0, 6));
+		Base::Add(new Notes(4, OneNotes * 371 + NotesCount, 1, 6));
+		Base::Add(new Notes(4, OneNotes * 389 + NotesCount, 4, 8));
+		Base::Add(new Notes(4, OneNotes * 427 + NotesCount, 5, 0));
 		//Base::Add(new Notes(1, OneNotes * 2 + NotesCount, 8));
 		//Base::Add(new Notes(2, OneNotes * 4 + NotesCount, 20));
 		break;
@@ -198,22 +225,17 @@ void Play::NotesSet() {
 		NotesPreSet(18);
 		NotesPreSet(9);
 		NotesPreSet(13);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
-		NotesPreSet(0);
+		NotesPreSet(16);
+		NotesPreSet(15);
+		NotesPreSet(17);
+		NotesPreSet(12);
+		NotesPreSet(11);
+		NotesPreSet(14);
+		NotesPreSet(13);
+		NotesPreSet(15);
+		NotesPreSet(12);
+		NotesPreSet(4);
+		NotesPreSet(5);
 		NotesPreSet(0);
 		NotesPreSet(0);
 		NotesPreSet(0);
