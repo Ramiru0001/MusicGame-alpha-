@@ -47,9 +47,9 @@ void Play::Update() {
 		if (CountDownToStart == 0) {
 			Baby();
 		}
-		/*if (CountUpToEnd >= 7080) {
+		if (CountUpToEnd >= 7080) {
 			m_kill = true;
-		}*/
+		}
 		break;
 	}
 }	
