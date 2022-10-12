@@ -50,6 +50,7 @@ void Play::Update() {
 		/*if (CountUpToEnd >= 7080) {
 			m_kill = true;
 		}*/
+		break;
 	}
 }	
 Play::~Play() {
@@ -73,7 +74,7 @@ void Play::ImageSet() {
 }
 void Play::Baby() {
 	video->Play();
-	//OneNotes = ;
+	OneNotes = 18.125;
 	Base::Add(new SoundBar(0));
 	Base::Add(new Score());
 	NotesSet();
@@ -265,8 +266,9 @@ void Play::NotesSet() {
 		NotesPreSet(0);
 		NotesPreSet(0);
 		NotesPreSet(0);
+		break;
 	case eNum_Baby:
-		//NotesCount = -117.75;
+		NotesCount = -117.75;
 		NotesPreSet(0);
 		NotesPreSet(1);
 		NotesPreSet(2);
@@ -274,5 +276,6 @@ void Play::NotesSet() {
 		NotesPreSet(4);
 		NotesPreSet(15);
 		NotesPreSet(0);
+		break;
 	}
 }
