@@ -55,28 +55,35 @@ void Play::NotesPreSet(int SetNum) {
 		Base::Add(new Notes(4, OneNotes * 0 + NotesCount,0,0));
 		//Base::Add(new Notes(1, OneNotes * 2 + NotesCount, 8));
 		//Base::Add(new Notes(2, OneNotes * 4 + NotesCount, 20));
+		break;
 	case 1:
 		Base::Add(new Notes(0, OneNotes * 0 + NotesCount, 8));
 		Base::Add(new Notes(2, OneNotes * 0 + NotesCount, 8));
+		break;
 	case 2:
 		Base::Add(new Notes(1, OneNotes * 1.9+ NotesCount, 8));
 		Base::Add(new Notes(3, OneNotes * 1.9 + NotesCount, 8));
+		break;
 	case 3:
 		Base::Add(new Notes(0, OneNotes * 3.5 + NotesCount, 8));
 		Base::Add(new Notes(3, OneNotes * 3.5+ NotesCount, 8));
+		break;
 	case 4:
 		Base::Add(new Notes(1, OneNotes * 5 + NotesCount, 8));
 		Base::Add(new Notes(2, OneNotes * 5 + NotesCount, 8));
+		break;
 	case 5:
 		Base::Add(new Notes(0, OneNotes * 7.3 + NotesCount, 8));
 		Base::Add(new Notes(1, OneNotes * 7.3 + NotesCount, 8));
+		break;
 	case 6:
 		Base::Add(new Notes(0, OneNotes * 8.6 + NotesCount, 10));
 		Base::Add(new Notes(0, OneNotes * 8.2 + NotesCount, 8));
+		break;
 	case 7:
 		Base::Add(new Notes(3, OneNotes * 9.5 + NotesCount, 3));
-	
 		Base::Add(new Notes(4, OneNotes * 0 + NotesCount, 0, 0));
+		break;
 	}
 	
 	switch (SoundNum) {
@@ -104,7 +111,7 @@ void Play::NotesSet() {
 		NotesPreSet(3);
 		NotesPreSet(4);
 		NotesPreSet(8);
-		NotesPreSet(5);		NotesPreSet(0);
+		NotesPreSet(5);
 		NotesPreSet(0);
 		NotesPreSet(0);
 		NotesPreSet(0);
