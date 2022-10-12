@@ -170,7 +170,7 @@ void Notes::RSizeSet() {
 }
 void Notes::RCheckHitNotes() {
 	CVector2D mouse_pos = CInput::GetMousePoint();
-	if (PUSH(CInput::eMouseL)) {
+	if (PUSH(CInput::eMouseL) && RNotesCount>=50) {
 		if (std::pow((mouse_pos.x - m_pos.x - 60), 2.0) + std::pow((mouse_pos.y - m_pos.y - 60), 2.0) <= 3600 ) {
 			SOUND("Tap")->Play();
 			m_kill = true;
