@@ -158,7 +158,6 @@ void Notes::LSpeedSet() {
 		m_time +=temp;
 	}
 }
-void Notes::RNotes() {}
 void Notes::RSizeSet() {
 	if (RNotesCount <60) {
 		RNotesCount++;

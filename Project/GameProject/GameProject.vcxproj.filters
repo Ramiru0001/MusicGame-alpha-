@@ -29,6 +29,9 @@
     <ClCompile Include="Game\ScoreScene.cpp">
       <Filter>Game</Filter>
     </ClCompile>
+    <ClCompile Include="Game\FreeNotes.cpp">
+      <Filter>Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Game">
@@ -70,6 +73,9 @@
       <Filter>Game</Filter>
     </ClInclude>
     <ClInclude Include="Game\ScoreScene.h">
+      <Filter>Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\FreeNotes.h">
       <Filter>Game</Filter>
     </ClInclude>
   </ItemGroup>

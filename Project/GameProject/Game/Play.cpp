@@ -2,6 +2,7 @@
 #include "Notes.h"
 #include "SoundBar.h"
 #include "Score.h"
+#include "FreeNotes.h"
 #include "SelectScene/SelectScene.h" 
 #include "ScoreScene.h"
 #include <Gllibrary.h>
@@ -221,6 +222,8 @@ void Play::NotesPreSet(int SetNum) {
 		break;
 	case 100:
 		Base::Add(new Notes(0, OneNotes * 0 + NotesCount, 8));
+	case 101:
+		Base::Add(new FreeNotes());
 	}
 	
 	switch (SoundNum) {
@@ -238,8 +241,9 @@ void Play::NotesPreSet(int SetNum) {
 void Play::NotesSet() {
 	switch (SoundNum) {
 	case eNum_LeanOn:
-		NotesCount = -117.75;	
-		NotesPreSet(0);
+		NotesCount = -117.75; Base::Add(new FreeNotes());
+		//‚±‚±‚Ü‚Åtest
+		/*NotesPreSet(0);
 		NotesPreSet(1);
 		NotesPreSet(2);
 		NotesPreSet(3);
@@ -288,7 +292,7 @@ void Play::NotesSet() {
 		NotesPreSet(5);
 		NotesPreSet(0);
 		NotesPreSet(0);
-		NotesPreSet(0);
+		NotesPreSet(0);*/
 		break;
 	case eNum_Baby:
 		NotesCount = -54.4;

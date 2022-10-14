@@ -36,7 +36,6 @@ public:
 	void ImageSet();
 	void LSpeedSet();
 	void LCheckHitNotes();
-	void RNotes();
 	void RSizeSet();
 	void RCheckHitNotes();
 	void RArea(int x,int y);
