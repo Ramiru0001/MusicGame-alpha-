@@ -8,6 +8,13 @@ SoundBar::SoundBar(int SoundNum) :Base(eType_Bar) {
 	switch(SoundNum) {
 	case LeanOn:
 		SongLen = 7080;
+		break;
+	case Baby:
+		SongLen = 9480;
+		break;
+	case Bones:
+		SongLen = 6720;
+		break;
 	}
 }
 void SoundBar::Update() {

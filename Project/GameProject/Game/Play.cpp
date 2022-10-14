@@ -85,7 +85,7 @@ void Play::ImageSet() {
 }
 void Play::Baby() {
 	video->Play();
-	OneNotes = 18.125;
+	OneNotes = 13.6;
 	Base::Add(new SoundBar(0));
 	Base::Add(new Score());
 	NotesSet();
@@ -291,7 +291,7 @@ void Play::NotesSet() {
 		NotesPreSet(0);
 		break;
 	case eNum_Baby:
-		//NotesCount = -117.75;
+		NotesCount = -54.4;
 		NotesPreSet(100);
 		NotesPreSet(100);
 		NotesPreSet(100);
@@ -390,7 +390,7 @@ void Play::NotesSet() {
 		NotesPreSet(100);
 		break;
 	case eNum_Bones:
-		//NotesCount = -117.75;
+		//NotesCount = -54.4;
 		NotesPreSet(100);
 		NotesPreSet(100);
 		NotesPreSet(100);

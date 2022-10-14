@@ -5,6 +5,8 @@ class SoundBar :public Base {
 public:
 	enum {
 		LeanOn,
+		Baby,
+		Bones,
 	};
 	int SongCount;
 	int SongLen;
