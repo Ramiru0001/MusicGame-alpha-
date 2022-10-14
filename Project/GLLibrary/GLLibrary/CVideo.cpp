@@ -383,11 +383,13 @@ void CVideoTextrue::RenderFrame()
     else {
         m_time += CFPS::GetDeltaTime() * m_speed_scale;
     }
-    m_state.av_frame->pts = uint64_t(m_time * (double)m_state.time_base.den / (double)m_state.time_base.num);
-    int64_t pts = m_state.av_frame->pts;
-    if (!video_reader_read_frame(m_data, &pts)) {
-        printf("Couldn't load video frame\n");
-        return;
+    int64_t next_pts = uint64_t(m_time * (double)m_state.time_base.den / (double)m_state.time_base.num);
+    while (next_pts > m_state.av_frame->pts) {
+        int64_t pts  = m_state.av_frame->pts = next_pts;
+        if (!video_reader_read_frame(m_data, &pts)) {
+            printf("Couldn't load video frame\n");
+            return;
+        }
     }
 
 

@@ -6,6 +6,7 @@ public:
 	enum {
 		eState_LeanOn,
 		eState_Baby,
+		eState_Bones,
 	};
 	int max;
 	int SoundNum;
@@ -23,5 +24,6 @@ public:
 	void ImageSet();
 	void LeanOn();
 	void Baby();
+	void Bones();
 	void Update();
 };

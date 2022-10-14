@@ -17,10 +17,13 @@ score_text("C:\\Windows\\Fonts\\msgothic.ttc", 64) {
 	ImageSet();
 	switch (ChoiceSound) {
 	case eNum_LeanOn:
-		video = new CVideo("Movie/LeanOn60.mp4");
+		video = new CVideo("Movie/LeanOn.mp4");
 		break;
 	case eNum_Baby:
 		video = new CVideo("Movie/Baby.mp4");
+		break;
+	case eNum_Bones:
+		video = new CVideo("Movie/Bones.mp4");
 		break;
 	}
 }
@@ -47,7 +50,15 @@ void Play::Update() {
 		if (CountDownToStart == 0) {
 			Baby();
 		}
-		if (CountUpToEnd >= 7080) {
+		if (CountUpToEnd >= 9480) {
+			m_kill = true;
+		}
+		break;
+	case eNum_Bones:
+		if (CountDownToStart == 0) {
+			Bones();
+		}
+		if (CountUpToEnd >= 6720) {
 			m_kill = true;
 		}
 		break;
@@ -80,6 +91,13 @@ void Play::Baby() {
 	NotesSet();
 }
 void Play::LeanOn() {
+	video->Play();
+	OneNotes = 18.125;
+	Base::Add(new SoundBar(0));
+	Base::Add(new Score());
+	NotesSet();
+}
+void Play::Bones() {
 	video->Play();
 	OneNotes = 18.125;
 	Base::Add(new SoundBar(0));
@@ -201,6 +219,8 @@ void Play::NotesPreSet(int SetNum) {
 		Base::Add(new Notes(1, OneNotes * 8 + NotesCount, 8));
 		Base::Add(new Notes(0, OneNotes * 8.5 + NotesCount, 8));
 		break;
+	case 100:
+		Base::Add(new Notes(0, OneNotes * 0 + NotesCount, 8));
 	}
 	
 	switch (SoundNum) {
@@ -208,7 +228,10 @@ void Play::NotesPreSet(int SetNum) {
 		NotesCount += 145.1;
 		break;
 	case eNum_Baby:
-		//NotesCount += 145.1;
+		NotesCount += 108.8;
+		break;
+	case eNum_Bones:
+		NotesCount += 114;
 		break;
 	}
 }
@@ -268,14 +291,123 @@ void Play::NotesSet() {
 		NotesPreSet(0);
 		break;
 	case eNum_Baby:
-		NotesCount = -117.75;
-		NotesPreSet(0);
-		NotesPreSet(1);
-		NotesPreSet(2);
-		NotesPreSet(3);
-		NotesPreSet(4);
-		NotesPreSet(15);
-		NotesPreSet(0);
+		//NotesCount = -117.75;
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		break;
+	case eNum_Bones:
+		//NotesCount = -117.75;
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
+		NotesPreSet(100);
 		break;
 	}
 }

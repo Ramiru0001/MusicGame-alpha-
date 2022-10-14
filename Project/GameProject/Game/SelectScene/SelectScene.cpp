@@ -44,6 +44,8 @@ void SelectScene::Update() {
 		case Baby:
 			Base::Add(new Play(Baby));
 			break;
+		case Bones:
+			Base::Add(new Play(Bones));
 		}
 	}
 }

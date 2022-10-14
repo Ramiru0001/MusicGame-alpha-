@@ -6,6 +6,7 @@ private:
 	enum {
 		eNum_LeanOn,
 		eNum_Baby,
+		eNum_Bones,
 	};
 	CImage Lane;
 	CImage NotesBar;
@@ -24,6 +25,7 @@ public:
 	void Update();
 	void LeanOn();
 	void Baby();
+	void Bones();
 	void NotesSet();
 	void NotesPreSet(int SetNum);
 };

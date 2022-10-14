@@ -8,9 +8,10 @@ class SelectScene :public Base {
 		//ゲームタイトルのstateを作る
 		LeanOn,
 		Baby,
+		Bones,
 	};
 private:
-	char game_title[10][100] = { "LeanOn","Baby"/*,"ABC","ABC"*/};
+	char game_title[10][100] = { "LeanOn","Baby","Bones"/*,"ABC","ABC"*/};
 	CFont title_text;
 	CFont select_title_text;
 	CFont PushEnter_Text;

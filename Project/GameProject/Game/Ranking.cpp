@@ -10,6 +10,12 @@ Ranking::Ranking(int state) :Base(eType_Ranking)
 	case eState_LeanOn:
 		LeanOn();
 		break;
+	case eState_Baby:
+		Baby();
+		break;
+	case eState_Bones:
+		Bones();
+		break;
 	}
 	ImageSet();
 }
@@ -38,7 +44,6 @@ void Ranking::ImageSet() {
 }
 void Ranking::LeanOn() {
 	std::fstream file("Score/LeanOn.txt", std::ios::in);
-
 	//データの読み取り
 	int i = 0;
 	for (i = 0; i < 10000; i++) {
@@ -64,7 +69,31 @@ void Ranking::LeanOn() {
 }
 void Ranking::Baby() {
 	std::fstream file("Score/Baby.txt", std::ios::in);
-
+	//データの読み取り
+	int i = 0;
+	for (i = 0; i < 10000; i++) {
+		file >> data[i];
+		m_score[i] = atoi(data[i].c_str());
+		file.seekp(+2, std::ios::cur);
+		if (file.eof()) {
+			i--;
+			break;
+		}
+	}
+	max = i;
+	//大きい順に並べ替え
+	for (int k = max; k >= 1; k--) {
+		for (int m = k - 1; m >= 0; m--) {
+			if (m_score[k] > m_score[m]) {
+				int w = m_score[k];
+				m_score[k] = m_score[m];
+				m_score[m] = w;
+			}
+		}
+	}
+}
+void Ranking::Bones() {
+	std::fstream file("Score/Bones.txt", std::ios::in);
 	//データの読み取り
 	int i = 0;
 	for (i = 0; i < 10000; i++) {
