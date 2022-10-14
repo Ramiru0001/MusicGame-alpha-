@@ -12,7 +12,8 @@ FreeNotes::FreeNotes(/*int time*/):Base(eType_Notes) {
 	//}
 	//NotesCount = 0;
 	//NotesCountToDelete = 20;
-	RandomArea();
+	m_pos=CVector2D(1000, 500);
+	//RandomArea();
 	TimeLimit = 0;
 }
 void FreeNotes::ImageSet() {
