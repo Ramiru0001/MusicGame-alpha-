@@ -6,6 +6,7 @@ enum {
 	eType_Game,
 	eType_Play,
 	eType_Notes,
+	eType_FreeNotes,
 	eType_Bar,
 	eType_Score
 };

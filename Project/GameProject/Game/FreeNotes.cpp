@@ -4,7 +4,7 @@
 #include <iostream>
 #include <random>
 #define PI 3.14159265359
-FreeNotes::FreeNotes(/*int time*/):Base(eType_Notes) {
+FreeNotes::FreeNotes(/*int time*/):Base(eType_FreeNotes) {
 	ImageSet();
 	//m_time = time + 216;
 	//if (m_time <= 0) {
@@ -13,7 +13,7 @@ FreeNotes::FreeNotes(/*int time*/):Base(eType_Notes) {
 	//NotesCount = 0;
 	//NotesCountToDelete = 20;
 	m_pos=CVector2D(1000, 500);
-	//RandomArea();
+	RandomArea();
 	TimeLimit = 0;
 }
 void FreeNotes::ImageSet() {
@@ -29,6 +29,7 @@ void FreeNotes::Draw() {
 		CircleNotesFrame.Draw();
 		CircleNotes.Draw();
 	}*/
+	CircleNotes.SetPos(m_pos.x - 60, m_pos.y - 60);
 	CircleNotes.Draw();
 }
 void FreeNotes::SizeSet() {
@@ -45,8 +46,8 @@ void FreeNotes::RandomArea() {
 	std::default_random_engine eng(rnd());
 	std::uniform_int_distribution<int> distrX(1, 19);
 	std::uniform_int_distribution<int> distrY(1, 9);
-	m_pos.x = 150 + distrX(eng) * 1770 / 19;
-	m_pos.y = 172 + distrY(eng) * 728 / 9;
+	m_pos.x = 140 + distrX(eng) * 1460 / 19;
+	m_pos.y = 140 + distrY(eng) * 640 / 9;
 	//std::cout << distrX(eng) << distrY(eng)<< "; ";
 }
 void FreeNotes::CheckHitNotes() {
@@ -89,6 +90,8 @@ void FreeNotes::NotesMove() {
 	std::uniform_int_distribution<int> MakeRadius(150, 800);
 	std::uniform_int_distribution<int> WhichRotate(0, 1);
 	std::uniform_int_distribution<int> TimeRand(60, 180);
+	Base* AnotherNotes = Base::FindObject(eType_FreeNotes);
+	CVector2D Anpos = (AnotherNotes->m_pos);
 	if (TimeLimit <= 0) {
 		//0~360で乱数生成
 		NotesAngle = DtoR(Angle(eng));
@@ -102,7 +105,9 @@ void FreeNotes::NotesMove() {
 		TimeLimit = TimeRand(eng);
 	}
 	TimeLimit--;
-	if (100 >= m_pos.x || m_pos.x >= 1820 || 100 >= m_pos.y || m_pos.y >= 900) {
+	if (160 >= m_pos.x + 60 || m_pos.x + 60 >= 1760 ||
+		260 >= m_pos.y + 60 || m_pos.y + 60 >= 900 ||
+		std::pow((Anpos.x + 60) - (m_pos.x + 60), 2.0) + std::pow((Anpos.y + 60) - (m_pos.y + 60), 2.0) <= 14400) {
 		if (rotate == 0) {
 			rotate = 1;
 		}
@@ -110,6 +115,7 @@ void FreeNotes::NotesMove() {
 			rotate = 0;
 		}
 	}
+	std::cout << std::pow((Anpos.x + 60) - (m_pos.x + 60), 2.0) + std::pow((Anpos.y + 60) - (m_pos.y + 60), 2.0) <<std::endl;
 	//移動する場所の角度
 	if (rotate == 0) {
 		NextAngle = NotesAngle + DtoR(360 / ((radius * 2 * PI) / 8));
@@ -117,16 +123,8 @@ void FreeNotes::NotesMove() {
 	else {
 		NextAngle = NotesAngle - DtoR(360 / ((radius * 2 * PI) / 8));
 	}
-	//std::cout << "座標" << m_pos.x << ":" << m_pos.y << std::endl;
 	//移動先の座標を割り出す
 	m_pos = CVector2D(cosf(NextAngle), sinf(NextAngle)) * radius + center;
+	//現在の角度を次の角度に変更
 	NotesAngle = NextAngle;
-	//std::cout << "角度" << NotesAngle << ":" << NextAngle << std::endl;
-	//std::cout << "座標" << m_pos.x << ":" << m_pos.y << std::endl;
-	//std::cout << DtoR(360 / ((radius * 2 * PI) / 8)) << std::endl;;
-	//std::cout << "m_pos:"<<cosf(NextAngle) * radius + center.x <<":"<< sinf(NextAngle) * radius + center.y << std::endl;
-	//std::cout << "m_pos:" << cosf(NotesAngle) * radius + center.x << ":" << sinf(NotesAngle) * radius + center.y << std::endl;
-	std::cout << TimeLimit << std::endl;
-	CircleNotes.SetPos(m_pos);
-	CircleNotes.Draw();
 }

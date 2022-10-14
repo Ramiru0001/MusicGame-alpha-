@@ -315,6 +315,9 @@ void Play::NotesSet() {
 	case eNum_LeanOn:
 		NotesCount = -117.75; 
 		Base::Add(new FreeNotes());
+		Base::Add(new FreeNotes());
+		Base::Add(new FreeNotes());
+		Base::Add(new FreeNotes());
 		//‚±‚±‚Ü‚Åtest
 		/*NotesPreSet(0);
 		NotesPreSet(1);
