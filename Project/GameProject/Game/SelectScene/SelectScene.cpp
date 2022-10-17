@@ -11,8 +11,12 @@ SelectScene::SelectScene() :Base(eType_Scene)
 	ShareNum::GameNum = 0;
 	ShareNum::debug = false;
 	Base::Add(new Ranking(0));
+	BackGround = COPY_RESOURCE("Winter", CImage);
+	BackGround.SetRect(0, 200, 1024, 800);
+	BackGround.SetSize(1920, 1080);
 }
 void SelectScene::Draw() {
+	BackGround.Draw();
 	PushEnter_Text.Draw(1500, 1000, 0, 0, 0, "Push EnterKey");
 	//選択中のタイトルを大きく表示
 	for (int i = 0; i < ShareNum::MaxGame; i++) {
