@@ -12,6 +12,7 @@ ScoreScene::~ScoreScene() {
 	Base::Add(new SelectScene());
 }
 void ScoreScene::Draw() {
+	BackGround.Draw();
 	int i = 0;
 	int Temp = ShareNum::score;
 	while (i < 5) {
@@ -31,6 +32,9 @@ void ScoreScene::ImageSet() {
 		m_img[i].SetRect(i * 39, 0, (i + 1) * 39, 77);
 		m_img[i].SetSize(100, 200);
 	}
+	BackGround = COPY_RESOURCE("Forest1", CImage);
+	BackGround.SetRect(0,0,2048,1500);
+	BackGround.SetSize(1920, 1080);
 }
 void ScoreScene::Update() {
 	if (PUSH(CInput::eButton10)) {

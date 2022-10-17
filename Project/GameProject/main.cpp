@@ -1,6 +1,7 @@
 #include <GLLibrary.h>
 #include "Base/Base.h"
 #include "Game/Play.h"
+#include "Game/Ranking.h"
 #include "Game/ScoreScene.h"
 #include "Game/SelectScene/SelectScene.h"
 #include"Title/Title.h"
@@ -99,6 +100,9 @@ void Init(void)
 	ADD_RESOURCE("BNumber", CImage::CreateImage("Image/BNumber.png"));
 	SOUND("Tap")->Load("Sound/TapSound.wav");
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/my.png"));
+	ADD_RESOURCE("Forest1", CImage::CreateImage("Image/forest1.png"));
+	ADD_RESOURCE("Forest2", CImage::CreateImage("Image/forest2.png"));
+	ADD_RESOURCE("Winter", CImage::CreateImage("Image/winter.png"));
 	Base::Add(new Title());
 	
 }

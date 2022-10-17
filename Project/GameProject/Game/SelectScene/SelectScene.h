@@ -11,6 +11,7 @@ class SelectScene :public Base {
 		Bones,
 	};
 private:
+	CImage BackGround;
 	char game_title[10][100] = { "LeanOn","Baby","Bones"/*,"ABC","ABC"*/};
 	CFont title_text;
 	CFont select_title_text;
