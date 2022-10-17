@@ -245,10 +245,6 @@ void Play::NotesPreSet(int SetNum) {
 		Base::Add(new Notes(3, OneNotes * 0 + NotesCount, 12));
 		Base::Add(new Notes(0, OneNotes * 1 + NotesCount, 8));
 		Base::Add(new Notes(1, OneNotes * 2 + NotesCount, 12));
-		Base::Add(new Notes(3, OneNotes * 2 + NotesCount, 12));
-		Base::Add(new Notes(2, OneNotes * 3 + NotesCount, 8));
-		Base::Add(new Notes(1, OneNotes * 4 + NotesCount, 12));
-		Base::Add(new Notes(3, OneNotes * 4 + NotesCount, 8));
 		break;
 	case 25:
 		Base::Add(new Notes(2, OneNotes * 1 + NotesCount, 5));
@@ -286,9 +282,9 @@ void Play::NotesPreSet(int SetNum) {
 		break;
 	case 30:
 		Base::Add(new Notes(0, OneNotes * 0 + NotesCount, 8));
-		Base::Add(new Notes(1, OneNotes * 0 + NotesCount, 8));
+		Base::Add(new Notes(1, OneNotes * 2 + NotesCount, 8));
 		Base::Add(new Notes(2, OneNotes * 0 + NotesCount, 8));
-		Base::Add(new Notes(3, OneNotes * 0 + NotesCount, 8));
+		Base::Add(new Notes(3, OneNotes * 2 + NotesCount, 8));
 		break;
 	case 31:
 		Base::Add(new Notes(4, OneNotes * 1 + NotesCount, 1, 2));
@@ -297,10 +293,31 @@ void Play::NotesPreSet(int SetNum) {
 		Base::Add(new Notes(3, OneNotes * 4 + NotesCount, 12));
 		break;
 	case 32:
-		Base::Add(new Notes(4, OneNotes * 1 + NotesCount, 1, 2));
-		Base::Add(new Notes(4, OneNotes * 2 + NotesCount, 2, 1));
-		Base::Add(new Notes(2, OneNotes * 0 + NotesCount, 8));
-		Base::Add(new Notes(3, OneNotes * 0 + NotesCount, 8));
+		Base::Add(new Notes(1, OneNotes * 0 + NotesCount, 8));
+		Base::Add(new Notes(2, OneNotes * 0.5 + NotesCount, 8));
+		Base::Add(new Notes(1, OneNotes * 1 + NotesCount, 8));
+		break;
+	case 33:
+		Base::Add(new Notes(1, OneNotes * 0 + NotesCount, 8));
+		Base::Add(new Notes(1, OneNotes * 1 + NotesCount, 8));
+		Base::Add(new Notes(2, OneNotes * 2 + NotesCount, 8));
+		Base::Add(new Notes(0, OneNotes * 3 + NotesCount, 8));
+		break;
+	case 34:
+		Base::Add(new Notes(4, OneNotes * 0 + NotesCount, 0, 4));
+		Base::Add(new Notes(4, OneNotes * 1 + NotesCount, 3, 7));
+		break;
+	case 35:
+		Base::Add(new Notes(4, OneNotes * 1 + NotesCount, 2, 9));
+		Base::Add(new Notes(4, OneNotes * 2 + NotesCount, 5, 1));
+		break;
+	case 36:
+		Base::Add(new Notes(4, OneNotes * 0 + NotesCount, 4, 3));
+		Base::Add(new Notes(4, OneNotes * 2 + NotesCount, 4, 2));
+		break;
+	case 37:
+		Base::Add(new Notes(1, OneNotes * 4 + NotesCount, 8));
+		Base::Add(new Notes(0, OneNotes * 3.5 + NotesCount, 8));
 		break;
 	case 100:
 		Base::Add(new Notes(0, OneNotes * 0 + NotesCount, 8));
@@ -411,24 +428,24 @@ void Play::NotesSet() {
 		NotesPreSet(26);
 		NotesPreSet(28);
 		NotesPreSet(29);
-		NotesPreSet(100);
+		NotesPreSet(20);
 		NotesPreSet(31);
-		NotesPreSet(100);
-		NotesPreSet(100);
-		NotesPreSet(100);
-		NotesPreSet(100);
-		NotesPreSet(100);
-		NotesPreSet(100);
-		NotesPreSet(100);
-		NotesPreSet(100);
-		NotesPreSet(100);
-		NotesPreSet(100);
-		NotesPreSet(100);
-		NotesPreSet(100);
-		NotesPreSet(100);
-		NotesPreSet(100);
-		NotesPreSet(100);
-		NotesPreSet(100);
+		NotesPreSet(34);
+		NotesPreSet(19);
+		NotesPreSet(5);
+		NotesPreSet(10);
+		NotesPreSet(21);
+		NotesPreSet(11);
+		NotesPreSet(8);
+		NotesPreSet(16);
+		NotesPreSet(35);
+		NotesPreSet(25);
+		NotesPreSet(14);
+		NotesPreSet(4);
+		NotesPreSet(20);
+		NotesPreSet(36);
+		NotesPreSet(21);
+		NotesPreSet(37);
 		NotesPreSet(100);
 		NotesPreSet(100);
 		NotesPreSet(100);
