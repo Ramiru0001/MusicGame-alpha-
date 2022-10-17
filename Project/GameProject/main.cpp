@@ -2,6 +2,7 @@
 #include "Base/Base.h"
 #include "Game/Play.h"
 #include "Game/SelectScene/SelectScene.h"
+#include"Title/Title.h"
 #define SCREEN_WIDTH 1920
 #define SCREEN_HEIGHT 1080
 
@@ -94,6 +95,9 @@ void Init(void)
 	ADD_RESOURCE("NotesBar", CImage::CreateImage("Image/NotesBar.png"));
 	SOUND("Tap")->Load("Sound/TapSound.wav");
 	Base::Add(new SelectScene());
+	ADD_RESOURCE("Title", CImage::CreateImage("Image/my.png"));
+	Base::Add(new Title());
+	
 }
 
 
