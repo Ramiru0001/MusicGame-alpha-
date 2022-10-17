@@ -89,10 +89,10 @@ void Notes::Update() {
 	Timer();
 }
 void Notes::LCheckHitNotes() {
-	if (895 < m_pos.y + 118 && m_pos.y + 118 < 905 ) {
-		SOUND("Tap")->Play();
-		m_kill = true;
-	}
+	//if (895 < m_pos.y + 118 && m_pos.y + 118 < 905 ) {
+		//SOUND("Tap")->Play();
+		//m_kill = true;
+	//}
 	if (PUSH(CInput::eButton1)) {
 		if (890 < m_pos.y + 118 && m_pos.y + 118 < 910&& m_pos.x == 5) {
 			//Base::Add(new Hit(m_pos));

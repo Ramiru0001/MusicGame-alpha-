@@ -106,8 +106,8 @@ void FreeNotes::NotesMove() {
 	}
 	TimeLimit--;
 	if (160 >= m_pos.x + 60 || m_pos.x + 60 >= 1760 ||
-		260 >= m_pos.y + 60 || m_pos.y + 60 >= 900 ||
-		std::pow((Anpos.x + 60) - (m_pos.x + 60), 2.0) + std::pow((Anpos.y + 60) - (m_pos.y + 60), 2.0) <= 14400) {
+		260 >= m_pos.y + 60 || m_pos.y + 60 >= 900 /*||
+		std::pow((Anpos.x + 60) - (m_pos.x + 60), 2.0) + std::pow((Anpos.y + 60) - (m_pos.y + 60), 2.0) <= 14400*/) {
 		if (rotate == 0) {
 			rotate = 1;
 		}
@@ -115,7 +115,7 @@ void FreeNotes::NotesMove() {
 			rotate = 0;
 		}
 	}
-	std::cout << std::pow((Anpos.x + 60) - (m_pos.x + 60), 2.0) + std::pow((Anpos.y + 60) - (m_pos.y + 60), 2.0) <<std::endl;
+	//std::cout << std::pow((Anpos.x + 60) - (m_pos.x + 60), 2.0) + std::pow((Anpos.y + 60) - (m_pos.y + 60), 2.0) <<std::endl;
 	//ˆÚ“®‚·‚éêŠ‚ÌŠp“x
 	if (rotate == 0) {
 		NextAngle = NotesAngle + DtoR(360 / ((radius * 2 * PI) / 8));

@@ -326,12 +326,12 @@ void Play::NotesSet() {
 	switch (SoundNum) {
 	case eNum_LeanOn:
 		NotesCount = -117.75; 
+		/*Base::Add(new FreeNotes());
 		Base::Add(new FreeNotes());
 		Base::Add(new FreeNotes());
-		Base::Add(new FreeNotes());
-		Base::Add(new FreeNotes());
+		Base::Add(new FreeNotes());*/
 		//‚±‚±‚Ü‚Åtest
-		/*NotesPreSet(0);
+		NotesPreSet(0);
 		NotesPreSet(1);
 		NotesPreSet(2);
 		NotesPreSet(3);
@@ -380,7 +380,7 @@ void Play::NotesSet() {
 		NotesPreSet(5);
 		NotesPreSet(0);
 		NotesPreSet(0);
-		NotesPreSet(0);*/
+		NotesPreSet(0);
 		break;
 	case eNum_Baby:
 		NotesCount = -54.4;

@@ -98,7 +98,6 @@ void Init(void)
 	ADD_RESOURCE("Number", CImage::CreateImage("Image/Number.png"));
 	ADD_RESOURCE("BNumber", CImage::CreateImage("Image/BNumber.png"));
 	SOUND("Tap")->Load("Sound/TapSound.wav");
-	Base::Add(new SelectScene());
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/my.png"));
 	Base::Add(new Title());
 	
