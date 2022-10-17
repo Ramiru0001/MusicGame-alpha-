@@ -4,4 +4,6 @@ class ShareNum {
 public:
 	static int GameNum;
 	static int MaxGame;
+	static int score;
+	static bool debug;
 };

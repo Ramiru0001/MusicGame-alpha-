@@ -2,10 +2,13 @@
 #include <GLLibrary.h>
 enum {
 	eType_Scene,
+	eType_Ranking,
 	eType_Game,
 	eType_Play,
 	eType_Notes,
+	eType_FreeNotes,
 	eType_Bar,
+	eType_Score
 };
 
 //d—Í‰Á‘¬“x

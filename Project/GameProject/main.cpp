@@ -1,6 +1,7 @@
 #include <GLLibrary.h>
 #include "Base/Base.h"
 #include "Game/Play.h"
+#include "Game/ScoreScene.h"
 #include "Game/SelectScene/SelectScene.h"
 #include"Title/Title.h"
 #define SCREEN_WIDTH 1920
@@ -93,14 +94,15 @@ void Init(void)
 	ADD_RESOURCE("Lane", CImage::CreateImage("Image/Lane.png"));
 	ADD_RESOURCE("SoundBar", CImage::CreateImage("Image/SoundBar.png"));
 	ADD_RESOURCE("NotesBar", CImage::CreateImage("Image/NotesBar.png"));
+	//ADD_RESOURCE("Number", CImage::CreateImage("Image/UI.png"));
+	ADD_RESOURCE("Number", CImage::CreateImage("Image/Number.png"));
+	ADD_RESOURCE("BNumber", CImage::CreateImage("Image/BNumber.png"));
 	SOUND("Tap")->Load("Sound/TapSound.wav");
 	Base::Add(new SelectScene());
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/my.png"));
 	Base::Add(new Title());
 	
 }
-
-
 void Release()
 {
 	CLoadThread::ClearInstance();

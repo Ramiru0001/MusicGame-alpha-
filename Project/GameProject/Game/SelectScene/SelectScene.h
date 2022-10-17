@@ -6,12 +6,15 @@
 class SelectScene :public Base {
 	enum {
 		//ゲームタイトルのstateを作る
-		eState_LeanOn,
+		LeanOn,
+		Baby,
+		Bones,
 	};
 private:
-	char game_title[10][100] = { "LeanOn"/*,"ABC","ABC"*/ };
+	char game_title[10][100] = { "LeanOn","Baby","Bones"/*,"ABC","ABC"*/};
 	CFont title_text;
 	CFont select_title_text;
+	CFont PushEnter_Text;
 public:
 	SelectScene();
 	void Draw();
