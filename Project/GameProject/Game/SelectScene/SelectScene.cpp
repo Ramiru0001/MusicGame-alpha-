@@ -17,14 +17,14 @@ SelectScene::SelectScene() :Base(eType_Scene)
 }
 void SelectScene::Draw() {
 	BackGround.Draw();
-	PushEnter_Text.Draw(1500, 1000, 0, 0, 0, "Push EnterKey");
+	PushEnter_Text.Draw(1500, 1000, 1, 1, 1, "Push EnterKey");
 	//選択中のタイトルを大きく表示
 	for (int i = 0; i < ShareNum::MaxGame; i++) {
 		if (ShareNum::GameNum != i) {
-			title_text.Draw(274, 214 + i * 150, 0, 0, 0, game_title[i]);
+			title_text.Draw(274, 214 + i * 150, 1, 1, 1, game_title[i]);
 		}
 		else {
-			select_title_text.Draw(274, 214 + i * 150, 0, 0, 0, game_title[i]);
+			select_title_text.Draw(274, 214 + i * 150, 1, 1, 1, game_title[i]);
 		}
 	}
 }

@@ -33,11 +33,11 @@ void Ranking::Draw() {
 			m++;
 		}
 	}
-	Ranking_text.Draw(1310, 180, 0, 0, 0, "Ranking");
+	Ranking_text.Draw(1310, 180, 1, 1, 1, "Ranking");
 }
 void Ranking::ImageSet() {
 	for (int i = 0; i < 10; i++) {
-		m_img[i] = COPY_RESOURCE("BNumber", CImage);
+		m_img[i] = COPY_RESOURCE("Number", CImage);
 		m_img[i].SetRect(i * 39, 0, (i + 1) * 39, 77);
 		m_img[i].SetSize(30, 50);
 	}
