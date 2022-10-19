@@ -11,8 +11,8 @@ SelectScene::SelectScene() :Base(eType_Scene)
 	ShareNum::GameNum = 0;
 	ShareNum::debug = false;
 	Base::Add(new Ranking(0));
-	BackGround = COPY_RESOURCE("Winter", CImage);
-	BackGround.SetRect(0, 200, 1024, 800);
+	BackGround = COPY_RESOURCE("FoxLandcape", CImage);
+	BackGround.SetRect(0, 300, 1024, 900);
 	BackGround.SetSize(1920, 1080);
 }
 void SelectScene::Draw() {

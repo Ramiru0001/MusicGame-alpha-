@@ -105,6 +105,7 @@ void Init(void)
 	ADD_RESOURCE("Circle4", CImage::CreateImage("Image/Circle4.png"));
 	ADD_RESOURCE("CircleFrame", CImage::CreateImage("Image/CircleFrame.png"));
 	ADD_RESOURCE("Square4", CImage::CreateImage("Image/Square4.png"));
+	ADD_RESOURCE("FoxLandcape", CImage::CreateImage("Image/landscape1.png"));
 	SOUND("Tap")->Load("Sound/TapSound.wav", 10);
 	Base::Add(new Title());
 	
