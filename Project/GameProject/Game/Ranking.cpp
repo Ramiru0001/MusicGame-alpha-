@@ -125,5 +125,8 @@ void Ranking::Update() {
 	case eState_Baby:
 		Baby();
 		break;
+	case eState_Bones:
+		Bones();
+		break;
 	}
 }

@@ -17,11 +17,14 @@ public:
 	int NotesArea;
 	int RNotesCount;
 	int RNotesCountToDelete;
+	int NotesRan;
+	int HitCountDown;
 	double m_speed;
 	CImage m_img;
-	CImage CircleNotes;
-	CImage SquareNotes;
-	CImage CircleNotesFrame;
+	CImage Frame_img;
+	CImage CircleNotes[5];
+	CImage SquareNotes[5];
+	CImage CircleNotesFrame[5];
 	CVector2D Right_pos;
 	CVector2D CenterRight_pos;
 	CVector2D CenterLeft_pos;
