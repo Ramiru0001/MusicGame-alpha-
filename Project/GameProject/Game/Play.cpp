@@ -64,6 +64,7 @@ void Play::Update() {
 		}
 		break;
 	}
+	std::cout << CountUpToEnd << std::endl;
 }	
 Play::~Play() {
 	std::ofstream Lfile("Score/LeanOn.txt", std::ios_base::app | std::ios_base::in);
@@ -87,7 +88,7 @@ void Play::ImageSet() {
 void Play::Baby() {
 	video->Play();
 	OneNotes = 13.6;
-	Base::Add(new SoundBar(0));
+	Base::Add(new SoundBar(1));
 	Base::Add(new Score());
 	NotesSet();
 }
@@ -101,7 +102,7 @@ void Play::LeanOn() {
 void Play::Bones() {
 	video->Play();
 	OneNotes = 15.725;
-	Base::Add(new SoundBar(0));
+	Base::Add(new SoundBar(2));
 	Base::Add(new Score());
 	NotesSet();
 }

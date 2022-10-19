@@ -103,6 +103,10 @@ void Init(void)
 	ADD_RESOURCE("Forest1", CImage::CreateImage("Image/forest1.png"));
 	ADD_RESOURCE("Forest2", CImage::CreateImage("Image/forest2.png"));
 	ADD_RESOURCE("Winter", CImage::CreateImage("Image/winter.png"));
+	ADD_RESOURCE("Circle1", CImage::CreateImage("Image/Circle.png"));
+	ADD_RESOURCE("Circle4", CImage::CreateImage("Image/Circle4.png"));
+	ADD_RESOURCE("Square", CImage::CreateImage("Image/Square.png"));
+	ADD_RESOURCE("Square4", CImage::CreateImage("Image/Square4.png"));
 	Base::Add(new Title());
 	
 }
