@@ -2,10 +2,10 @@
 #include "ShareNum.h"
 #include <iostream>
 #include <random>
+std::random_device rnd;
+std::default_random_engine eng(rnd());
+std::uniform_int_distribution<int> Ran(0, 4);
 Notes::Notes(int area,int time,int speed) :Base(eType_Notes) {
-	std::random_device rnd;
-	std::default_random_engine eng(rnd());
-	std::uniform_int_distribution<int> Ran(0, 4);
 	ImageSet();
 	m_time = time + 180;
 	m_speed = speed;
@@ -41,9 +41,6 @@ Notes::Notes(int area,int time,int speed) :Base(eType_Notes) {
 	}
 }
 Notes::Notes(int area, int time, int x,int y) :Base(eType_Notes) {
-	std::random_device rnd;
-	std::default_random_engine eng(rnd());
-	std::uniform_int_distribution<int> Ran(0, 4);
 	ImageSet();
 	m_time = time + 216;
 	NotesArea = area;
@@ -102,7 +99,7 @@ void Notes::LCheckHitNotes() {
 		//m_kill = true;
 	//}
 	if (PUSH(CInput::eButton1)) {
-		if (890 < m_pos.y + 118 && m_pos.y + 118 < 910&& m_pos.x == 5) {
+		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930&& m_pos.x == 5) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
@@ -110,7 +107,7 @@ void Notes::LCheckHitNotes() {
 		}
 	}
 	if (PUSH(CInput::eButton2)) {
-		if (890 < m_pos.y + 118 && m_pos.y + 118 < 910 && m_pos.x == 245) {
+		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 245) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
@@ -118,7 +115,7 @@ void Notes::LCheckHitNotes() {
 		}
 	}
 	if (PUSH(CInput::eButton3)) {
-		if (890 < m_pos.y + 118 && m_pos.y + 118 < 910 && m_pos.x == 485) {
+		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 485) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
@@ -126,7 +123,7 @@ void Notes::LCheckHitNotes() {
 		}
 	}
 	if (PUSH(CInput::eButton4)) {
-		if (890 < m_pos.y + 118 && m_pos.y + 118 < 910 && m_pos.x == 725) {
+		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 725) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
