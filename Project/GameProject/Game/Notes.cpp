@@ -107,7 +107,10 @@ void Notes::LCheckHitNotes() {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
-			ShareNum::score += 500;
+			ShareNum::score += 250; 
+			if (HitCountDown == 0) {
+				ShareNum::score += 250;
+			}
 		}
 	}
 	if (PUSH(CInput::eButton2)) {
@@ -115,7 +118,10 @@ void Notes::LCheckHitNotes() {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
-			ShareNum::score += 500;
+			ShareNum::score += 250;
+			if (HitCountDown == 0) {
+				ShareNum::score += 250;
+			}
 		}
 	}
 	if (PUSH(CInput::eButton3)) {
@@ -123,7 +129,10 @@ void Notes::LCheckHitNotes() {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
-			ShareNum::score += 500;
+			ShareNum::score += 250;
+			if (HitCountDown == 0) {
+				ShareNum::score += 250;
+			}
 		}
 	}
 	if (PUSH(CInput::eButton4)) {
@@ -131,7 +140,10 @@ void Notes::LCheckHitNotes() {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
-			ShareNum::score += 500;
+			ShareNum::score += 250;
+			if (HitCountDown == 0) {
+				ShareNum::score += 250;
+			}
 		}
 	}
 }
@@ -191,7 +203,7 @@ void Notes::LSpeedSet() {
 	}
 }
 void Notes::RSizeSet() {
-	if (RNotesCount <60) {
+	if (RNotesCount <61) {
 		RNotesCount++;
 	}
 	m_img.SetSize(120, 120);
@@ -201,11 +213,14 @@ void Notes::RSizeSet() {
 }
 void Notes::RCheckHitNotes() {
 	CVector2D mouse_pos = CInput::GetMousePoint();
-	if (PUSH(CInput::eMouseL) && RNotesCount>=58) {
+	if (PUSH(CInput::eMouseL) && RNotesCount>=57) {
 		if (std::pow((mouse_pos.x - m_pos.x - 60), 2.0) + std::pow((mouse_pos.y - m_pos.y - 60), 2.0) <= 3600 ) {
 			SOUND("Tap")->Play();
 			m_kill = true;
-			ShareNum::score += 500;
+			ShareNum::score += 350;
+			if (RNotesCount == 60) {
+				ShareNum::score += 650;
+			}
 		}
 	}
 }
