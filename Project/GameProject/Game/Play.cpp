@@ -64,7 +64,6 @@ void Play::Update() {
 		}
 		break;
 	}
-	std::cout << CountUpToEnd << std::endl;
 }	
 Play::~Play() {
 	std::ofstream Lfile("Score/LeanOn.txt", std::ios_base::app | std::ios_base::in);

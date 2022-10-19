@@ -18,6 +18,7 @@ public:
 	int RNotesCount;
 	int RNotesCountToDelete;
 	int NotesRan;
+	int HitCountDown;
 	double m_speed;
 	CImage m_img;
 	CImage Frame_img;

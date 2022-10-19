@@ -98,7 +98,6 @@ void Init(void)
 	//ADD_RESOURCE("Number", CImage::CreateImage("Image/UI.png"));
 	ADD_RESOURCE("Number", CImage::CreateImage("Image/Number.png"));
 	ADD_RESOURCE("BNumber", CImage::CreateImage("Image/BNumber.png"));
-	SOUND("Tap")->Load("Sound/TapSound.wav");
 	ADD_RESOURCE("Title", CImage::CreateImage("Image/my.png"));
 	ADD_RESOURCE("Forest1", CImage::CreateImage("Image/forest1.png"));
 	ADD_RESOURCE("Forest2", CImage::CreateImage("Image/forest2.png"));
@@ -106,6 +105,7 @@ void Init(void)
 	ADD_RESOURCE("Circle4", CImage::CreateImage("Image/Circle4.png"));
 	ADD_RESOURCE("CircleFrame", CImage::CreateImage("Image/CircleFrame.png"));
 	ADD_RESOURCE("Square4", CImage::CreateImage("Image/Square4.png"));
+	SOUND("Tap")->Load("Sound/TapSound.wav", 10);
 	Base::Add(new Title());
 	
 }

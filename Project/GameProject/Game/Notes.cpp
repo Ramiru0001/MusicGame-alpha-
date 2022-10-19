@@ -79,7 +79,11 @@ void Notes::Update() {
 	case eState_CenterLeft:
 	case eState_CenterRight:
 	case eState_Right:
+		if (m_time == 0) {
+			HitCountDown = ((900 - 118) / m_speed) + 1;
+		}
 		if (state == true) {
+			HitCountDown--;
 			LCheckHitNotes();
 			m_pos.y += m_speed;
 		}
@@ -94,12 +98,12 @@ void Notes::Update() {
 	Timer();
 }
 void Notes::LCheckHitNotes() {
-	//if (895 < m_pos.y + 118 && m_pos.y + 118 < 905 ) {
-		//SOUND("Tap")->Play();
-		//m_kill = true;
-	//}
+	/*if (HitCountDown==0) {
+		SOUND("Tap")->Play();
+		m_kill = true;
+	}*/
 	if (PUSH(CInput::eButton1)) {
-		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930&& m_pos.x == 5) {
+		if (-3 <= HitCountDown && HitCountDown <= 3 && m_pos.x == 5) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
@@ -107,7 +111,7 @@ void Notes::LCheckHitNotes() {
 		}
 	}
 	if (PUSH(CInput::eButton2)) {
-		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 245) {
+		if (-3 <= HitCountDown && HitCountDown <= 4 && m_pos.x == 245) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
@@ -115,7 +119,7 @@ void Notes::LCheckHitNotes() {
 		}
 	}
 	if (PUSH(CInput::eButton3)) {
-		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 485) {
+		if (-3 <= HitCountDown && HitCountDown <= 4 && m_pos.x == 485) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
@@ -123,7 +127,7 @@ void Notes::LCheckHitNotes() {
 		}
 	}
 	if (PUSH(CInput::eButton4)) {
-		if (870 < m_pos.y + 118 && m_pos.y + 118 < 930 && m_pos.x == 725) {
+		if (-3 <= HitCountDown && HitCountDown <= 4 && m_pos.x == 725) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
