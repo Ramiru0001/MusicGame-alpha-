@@ -19,12 +19,18 @@ public:
 	int RNotesCountToDelete;
 	int NotesRan;
 	int HitCountDown;
+	int ColorNum;
 	double m_speed;
 	CImage m_img;
 	CImage Frame_img;
 	CImage CircleNotes[5];
+	CImage DarkCircleNotes[5];
 	CImage SquareNotes[5];
 	CImage CircleNotesFrame[5];
+	CImage TapA;
+	CImage TapS;
+	CImage TapD;
+	CImage TapF;
 	CVector2D Right_pos;
 	CVector2D CenterRight_pos;
 	CVector2D CenterLeft_pos;
@@ -43,4 +49,5 @@ public:
 	void RCheckHitNotes();
 	void RArea(int x,int y);
 	void CountDownToDelete();
+	void LNotesDelete();
 };

@@ -48,20 +48,44 @@ Notes::Notes(int area, int time, int x,int y) :Base(eType_Notes) {
 		state = true;
 	}
 	RNotesCount = 0;
-	RNotesCountToDelete = 10;
+	RNotesCountToDelete = 20;
 	RArea(x,y);
-	m_img = CircleNotes[Ran(eng)];
+	ColorNum = Ran(eng);
+	m_img = CircleNotes[ColorNum];
 	Frame_img = CircleNotesFrame[Ran(eng)];
 }
 void Notes::Draw() {
 	switch (NotesArea) {
 	case eState_Left:
+		if (state == true) {
+			m_img.SetPos(m_pos);
+			m_img.Draw();
+			TapA.SetPos(m_pos);
+			TapA.Draw();
+		}
+		break;
 	case eState_CenterLeft:
+		if (state == true) {
+			m_img.SetPos(m_pos);
+			m_img.Draw();
+			TapS.SetPos(m_pos);
+			TapS.Draw();
+		}
+		break;
 	case eState_CenterRight:
+		if (state == true) {
+			m_img.SetPos(m_pos);
+			m_img.Draw();
+			TapD.SetPos(m_pos);
+			TapD.Draw();
+		}
+		break;
 	case eState_Right:
 		if (state == true) {
 			m_img.SetPos(m_pos);
 			m_img.Draw();
+			TapF.SetPos(m_pos);
+			TapF.Draw();
 		}
 		break;
 	case  eState_RightSide:
@@ -95,6 +119,7 @@ void Notes::Update() {
 		}
 		break;
 	}
+	LNotesDelete();
 	Timer();
 }
 void Notes::LCheckHitNotes() {
@@ -103,18 +128,18 @@ void Notes::LCheckHitNotes() {
 		m_kill = true;
 	}*/
 	if (PUSH(CInput::eButton1)) {
-		if (-3 <= HitCountDown && HitCountDown <= 3 && m_pos.x == 5) {
+		if (-10 <= HitCountDown && HitCountDown <= 10 && m_pos.x == 5) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
-			ShareNum::score += 250; 
+			ShareNum::score += 250;
 			if (HitCountDown == 0) {
 				ShareNum::score += 250;
 			}
 		}
 	}
 	if (PUSH(CInput::eButton2)) {
-		if (-3 <= HitCountDown && HitCountDown <= 4 && m_pos.x == 245) {
+		if (-10 <= HitCountDown && HitCountDown <= 10 && m_pos.x == 245) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
@@ -125,7 +150,7 @@ void Notes::LCheckHitNotes() {
 		}
 	}
 	if (PUSH(CInput::eButton3)) {
-		if (-3 <= HitCountDown && HitCountDown <= 4 && m_pos.x == 485) {
+		if (-10 <= HitCountDown && HitCountDown <= 10 && m_pos.x == 485) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
@@ -136,7 +161,7 @@ void Notes::LCheckHitNotes() {
 		}
 	}
 	if (PUSH(CInput::eButton4)) {
-		if (-3 <= HitCountDown && HitCountDown <= 4 && m_pos.x == 725) {
+		if (-10 <= HitCountDown && HitCountDown <= 10 && m_pos.x == 725) {
 			//Base::Add(new Hit(m_pos));
 			SOUND("Tap")->Play();
 			m_kill = true;
@@ -161,11 +186,17 @@ void Notes::ImageSet() {
 	CenterRight_pos = CVector2D(485, 0);
 	Right_pos = CVector2D(725, 0);
 	//âÊëúÇê›íË
+	TapA = COPY_RESOURCE("TapA", CImage);
+	TapS = COPY_RESOURCE("TapS", CImage);
+	TapD = COPY_RESOURCE("TapD", CImage);
+	TapF = COPY_RESOURCE("TapF", CImage);
 	CircleNotes[0] = COPY_RESOURCE("Notes", CImage);
+	DarkCircleNotes[0] = COPY_RESOURCE("DarkCircle", CImage);
 	SquareNotes[0] = COPY_RESOURCE("Notes", CImage);
 	CircleNotesFrame[0] = COPY_RESOURCE("Notes", CImage);
 	for (int i = 1; i < 5; i++) {
 		CircleNotes[i] = COPY_RESOURCE("Circle4", CImage);
+		DarkCircleNotes[i] = COPY_RESOURCE("DarkCircle4", CImage);
 		SquareNotes[i] = COPY_RESOURCE("Square4", CImage);
 		CircleNotesFrame[i] = COPY_RESOURCE("CircleFrame", CImage);
 	}
@@ -176,7 +207,11 @@ void Notes::ImageSet() {
 	CircleNotes[1].SetRect(8,7,248,249);
 	CircleNotes[2].SetRect(263,6,505,250);
 	CircleNotes[3].SetRect(28,275,228,475);
-	CircleNotes[4].SetRect(256,256,512,512);
+	CircleNotes[4].SetRect(256,256,512,512); 
+	DarkCircleNotes[1].SetRect(8, 7, 248, 249);
+	DarkCircleNotes[2].SetRect(263, 6, 505, 250);
+	DarkCircleNotes[3].SetRect(28, 275, 228, 475);
+	DarkCircleNotes[4].SetRect(256, 256, 512, 512);
 	SquareNotes[1].SetRect(7,8,248,248);
 	SquareNotes[2].SetRect(258,2,509,255);
 	SquareNotes[3].SetRect(21,272,235,499);
@@ -189,6 +224,7 @@ void Notes::ImageSet() {
 	for (int i = 0; i < 5; i++) {
 		SquareNotes[i].SetSize(236, 118);
 		CircleNotes[i].SetSize(120, 120);
+		DarkCircleNotes[i].SetSize(120, 120);
 	}
 }
 void Notes::LSpeedSet() {
@@ -213,7 +249,7 @@ void Notes::RSizeSet() {
 }
 void Notes::RCheckHitNotes() {
 	CVector2D mouse_pos = CInput::GetMousePoint();
-	if (PUSH(CInput::eMouseL) && RNotesCount>=57) {
+	if (PUSH(CInput::eMouseL) && RNotesCount>=45) {
 		if (std::pow((mouse_pos.x - m_pos.x - 60), 2.0) + std::pow((mouse_pos.y - m_pos.y - 60), 2.0) <= 3600 ) {
 			SOUND("Tap")->Play();
 			m_kill = true;
@@ -222,6 +258,12 @@ void Notes::RCheckHitNotes() {
 				ShareNum::score += 650;
 			}
 		}
+	}
+	if (std::pow((mouse_pos.x - m_pos.x - 60), 2.0) + std::pow((mouse_pos.y - m_pos.y - 60), 2.0) <= 3600 && RNotesCount >= 45) {
+		m_img = DarkCircleNotes[ColorNum];
+	}
+	else {
+		m_img = CircleNotes[ColorNum];
 	}
 }
 void Notes::RArea(int x,int y) {
@@ -234,5 +276,10 @@ void Notes::CountDownToDelete() {
 		if (RNotesCountToDelete <= 0) {
 			m_kill = true;
 		}
+	}
+}
+void Notes::LNotesDelete() {
+	if (m_pos.y >= 1150) {
+		m_kill = true;
 	}
 }

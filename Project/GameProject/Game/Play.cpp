@@ -10,7 +10,7 @@
 #include <fstream>
 #include "../Base/Base.h"
 Play::Play(int ChoiceSound) : Base(eType_Play),
-score_text("C:\\Windows\\Fonts\\msgothic.ttc", 64) {
+score_text("C:\\Windows\\Fonts\\msgothic.ttc", 64){
 	glClearColor(0, 0, 0, 0);
 	CountDownToStart = 190;
 	CountUpToEnd = 0;
@@ -27,6 +27,9 @@ score_text("C:\\Windows\\Fonts\\msgothic.ttc", 64) {
 		video = new CVideo("Movie/Bones.mp4");
 		break;
 	}
+	for (int i = 0; i < 4; i++) {
+		PushKey[i] = false;
+	}
 }
 void Play::Draw() {
 	if (CountDownToStart <= 0) {
@@ -34,6 +37,12 @@ void Play::Draw() {
 	}
 	Lane.Draw();
 	NotesBar.Draw();
+	LeftClick.Draw();
+	for (int i = 0; i < 4; i++) {
+		if (PushKey[i] == true) {
+			NotesBarBlue[i].Draw();
+		}
+	}
 }
 void Play::Update() {
 	CountDownToStart--;
@@ -64,16 +73,48 @@ void Play::Update() {
 		}
 		break;
 	}
+	for (int i = 0; i < 4; i++) {
+		if (PushKey[i] == true) {
+			//m_NotesBar = NotesBarBlue;
+			PushCount[i]++;
+		}
+		if (PushCount[i] >= 10) {
+			PushKey[i] = false;
+			//KeyNum = 4;
+			//m_NotesBar = NotesBar;
+		}
+	}
+	if (HOLD(CInput::eButton1)) {
+		PushKey[0] = true;
+		PushCount[0] = 0;
+	}
+	if (HOLD(CInput::eButton2)) {
+		PushKey[1] = true;
+		PushCount[1] = 0;
+	}
+	if (HOLD(CInput::eButton3)) {
+		PushKey[2] = true;
+		PushCount[2] = 0;
+	}
+	if (HOLD(CInput::eButton4)) {
+		PushKey[3] = true;
+		PushCount[3] = 0;
+	}
+	//std::cout << ShareNum::HitCount << std::endl;
 }	
 Play::~Play() {
 	std::ofstream Lfile("Score/LeanOn.txt", std::ios_base::app | std::ios_base::in);
 	std::ofstream Bfile("Score/Baby.txt", std::ios_base::app | std::ios_base::in);
+	std::ofstream Bofile("Score/Baby.txt", std::ios_base::app | std::ios_base::in);
 	switch (ShareNum::GameNum) {
 	case eNum_LeanOn:
 		Lfile << ShareNum::score << std::endl;
 		break;
 	case eNum_Baby:
 		Bfile << ShareNum::score << std::endl;
+		break;
+	case eNum_Bones:
+		Bofile << ShareNum::score << std::endl;
 		break;
 	}
 	video->Stop();
@@ -83,6 +124,23 @@ Play::~Play() {
 void Play::ImageSet() {
 	Lane = COPY_RESOURCE("Lane", CImage);
 	NotesBar = COPY_RESOURCE("NotesBar", CImage);
+	for (int i = 0; i < 4; i++) {
+		NotesBarBlue[i] = COPY_RESOURCE("NotesBarBlue", CImage);
+	}
+	NotesBarBlue[0].SetRect(0, 0, 243, 1080);
+	NotesBarBlue[1].SetRect(243, 0, 483, 1080);
+	NotesBarBlue[2].SetRect(483, 0, 723, 1080);
+	NotesBarBlue[3].SetRect(723, 0, 980, 1080);
+	NotesBarBlue[0].SetPos(0, 0);
+	NotesBarBlue[1].SetPos(243, 0);
+	NotesBarBlue[2].SetPos(483, 0);
+	NotesBarBlue[3].SetPos(723, 0);
+	NotesBarBlue[0].SetSize(243, 1080);
+	NotesBarBlue[1].SetSize(240, 1080);
+	NotesBarBlue[2].SetSize(240, 1080);
+	NotesBarBlue[3].SetSize(257, 1080);
+	LeftClick= COPY_RESOURCE("LeftClick", CImage);
+	//m_NotesBar = NotesBar;
 }
 void Play::Baby() {
 	video->Play();
