@@ -56,12 +56,35 @@ Notes::Notes(int area, int time, int x,int y) :Base(eType_Notes) {
 void Notes::Draw() {
 	switch (NotesArea) {
 	case eState_Left:
+		if (state == true) {
+			m_img.SetPos(m_pos);
+			m_img.Draw();
+			TapA.SetPos(m_pos);
+			TapA.Draw();
+		}
+		break;
 	case eState_CenterLeft:
+		if (state == true) {
+			m_img.SetPos(m_pos);
+			m_img.Draw();
+			TapS.SetPos(m_pos);
+			TapS.Draw();
+		}
+		break;
 	case eState_CenterRight:
+		if (state == true) {
+			m_img.SetPos(m_pos);
+			m_img.Draw();
+			TapD.SetPos(m_pos);
+			TapD.Draw();
+		}
+		break;
 	case eState_Right:
 		if (state == true) {
 			m_img.SetPos(m_pos);
 			m_img.Draw();
+			TapF.SetPos(m_pos);
+			TapF.Draw();
 		}
 		break;
 	case  eState_RightSide:
@@ -162,6 +185,10 @@ void Notes::ImageSet() {
 	CenterRight_pos = CVector2D(485, 0);
 	Right_pos = CVector2D(725, 0);
 	//‰æ‘œ‚ðÝ’è
+	TapA = COPY_RESOURCE("TapA", CImage);
+	TapS = COPY_RESOURCE("TapS", CImage);
+	TapD = COPY_RESOURCE("TapD", CImage);
+	TapF = COPY_RESOURCE("TapF", CImage);
 	CircleNotes[0] = COPY_RESOURCE("Notes", CImage);
 	SquareNotes[0] = COPY_RESOURCE("Notes", CImage);
 	CircleNotesFrame[0] = COPY_RESOURCE("Notes", CImage);
@@ -214,7 +241,7 @@ void Notes::RSizeSet() {
 }
 void Notes::RCheckHitNotes() {
 	CVector2D mouse_pos = CInput::GetMousePoint();
-	if (PUSH(CInput::eMouseL) && RNotesCount>=55) {
+	if (PUSH(CInput::eMouseL) && RNotesCount>=45) {
 		if (std::pow((mouse_pos.x - m_pos.x - 60), 2.0) + std::pow((mouse_pos.y - m_pos.y - 60), 2.0) <= 3600 ) {
 			SOUND("Tap")->Play();
 			m_kill = true;

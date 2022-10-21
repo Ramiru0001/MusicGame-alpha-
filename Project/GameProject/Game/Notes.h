@@ -25,6 +25,10 @@ public:
 	CImage CircleNotes[5];
 	CImage SquareNotes[5];
 	CImage CircleNotesFrame[5];
+	CImage TapA;
+	CImage TapS;
+	CImage TapD;
+	CImage TapF;
 	CVector2D Right_pos;
 	CVector2D CenterRight_pos;
 	CVector2D CenterLeft_pos;
