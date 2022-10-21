@@ -111,6 +111,9 @@ void Init(void)
 	ADD_RESOURCE("TapD", CImage::CreateImage("Image/D.png"));
 	ADD_RESOURCE("TapF", CImage::CreateImage("Image/F.png"));
 	ADD_RESOURCE("LeftClick", CImage::CreateImage("Image/LeftClick.png"));
+	ADD_RESOURCE("DarkCircle", CImage::CreateImage("Image/DarkCircle.png"));
+	ADD_RESOURCE("DarkCircle4", CImage::CreateImage("Image/DarkCircle4.png"));
+	ADD_RESOURCE("NotesBarBlue", CImage::CreateImage("Image/NotesBarBlue.png"));
 	SOUND("Tap")->Load("Sound/TapSound.wav", 10);
 	SOUND("LeanOn")->Load("Sound/LeanOn.wav");
 	SOUND("Baby")->Load("Sound/Baby.wav");

@@ -9,7 +9,9 @@ private:
 		eNum_Bones,
 	};
 	CImage Lane;
+	CImage m_NotesBar;
 	CImage NotesBar;
+	CImage NotesBarBlue;
 	CImage LeftClick;
 	CVideo* video;
 	CFont score_text;

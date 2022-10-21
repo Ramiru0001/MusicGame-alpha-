@@ -33,7 +33,7 @@ void Play::Draw() {
 		video->Draw();
 	}
 	Lane.Draw();
-	NotesBar.Draw();
+	m_NotesBar.Draw();
 	LeftClick.Draw();
 }
 void Play::Update() {
@@ -65,6 +65,31 @@ void Play::Update() {
 		}
 		break;
 	}
+	if (ShareNum::Hit == true) {
+		m_NotesBar = NotesBarBlue;
+		ShareNum::HitCount++;
+	}
+	if(ShareNum::HitCount >=10) {
+		ShareNum::Hit == false;
+		m_NotesBar = NotesBar;
+	}
+	if (HOLD(CInput::eButton1)) {
+		ShareNum::Hit = true;
+		ShareNum::HitCount = 0;
+	}
+	if (HOLD(CInput::eButton2)) {
+		ShareNum::Hit = true;
+		ShareNum::HitCount = 0;
+	}
+	if (HOLD(CInput::eButton3)) {
+		ShareNum::Hit = true;
+		ShareNum::HitCount = 0;
+	}
+	if (HOLD(CInput::eButton4)) {
+		ShareNum::Hit = true;
+		ShareNum::HitCount = 0;
+	}
+	//std::cout << ShareNum::HitCount << std::endl;
 }	
 Play::~Play() {
 	std::ofstream Lfile("Score/LeanOn.txt", std::ios_base::app | std::ios_base::in);
@@ -88,7 +113,9 @@ Play::~Play() {
 void Play::ImageSet() {
 	Lane = COPY_RESOURCE("Lane", CImage);
 	NotesBar = COPY_RESOURCE("NotesBar", CImage);
+	NotesBarBlue = COPY_RESOURCE("NotesBarBlue", CImage);
 	LeftClick= COPY_RESOURCE("LeftClick", CImage);
+	m_NotesBar = NotesBar;
 }
 void Play::Baby() {
 	video->Play();

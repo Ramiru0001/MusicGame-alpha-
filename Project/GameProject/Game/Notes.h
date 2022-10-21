@@ -19,10 +19,12 @@ public:
 	int RNotesCountToDelete;
 	int NotesRan;
 	int HitCountDown;
+	int ColorNum;
 	double m_speed;
 	CImage m_img;
 	CImage Frame_img;
 	CImage CircleNotes[5];
+	CImage DarkCircleNotes[5];
 	CImage SquareNotes[5];
 	CImage CircleNotesFrame[5];
 	CImage TapA;
