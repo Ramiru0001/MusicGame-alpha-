@@ -11,15 +11,17 @@ private:
 	CImage Lane;
 	CImage m_NotesBar;
 	CImage NotesBar;
-	CImage NotesBarBlue;
+	CImage NotesBarBlue[4];
 	CImage LeftClick;
 	CVideo* video;
 	CFont score_text;
 	int CountDownToStart;
 	int CountUpToEnd;
 	int SoundNum;
+	int PushCount[4];
 	float OneNotes;
 	float NotesCount;
+	bool PushKey[4];
 public:
 	Play(int ChoiceSound);
 	~Play();

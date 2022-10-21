@@ -27,14 +27,22 @@ score_text("C:\\Windows\\Fonts\\msgothic.ttc", 64){
 		video = new CVideo("Movie/Bones.mp4");
 		break;
 	}
+	for (int i = 0; i < 4; i++) {
+		PushKey[i] = false;
+	}
 }
 void Play::Draw() {
 	if (CountDownToStart <= 0) {
 		video->Draw();
 	}
 	Lane.Draw();
-	m_NotesBar.Draw();
+	NotesBar.Draw();
 	LeftClick.Draw();
+	for (int i = 0; i < 4; i++) {
+		if (PushKey[i] == true) {
+			NotesBarBlue[i].Draw();
+		}
+	}
 }
 void Play::Update() {
 	CountDownToStart--;
@@ -65,29 +73,32 @@ void Play::Update() {
 		}
 		break;
 	}
-	if (ShareNum::Hit == true) {
-		m_NotesBar = NotesBarBlue;
-		ShareNum::HitCount++;
-	}
-	if(ShareNum::HitCount >=10) {
-		ShareNum::Hit == false;
-		m_NotesBar = NotesBar;
+	for (int i = 0; i < 4; i++) {
+		if (PushKey[i] == true) {
+			//m_NotesBar = NotesBarBlue;
+			PushCount[i]++;
+		}
+		if (PushCount[i] >= 10) {
+			PushKey[i] = false;
+			//KeyNum = 4;
+			//m_NotesBar = NotesBar;
+		}
 	}
 	if (HOLD(CInput::eButton1)) {
-		ShareNum::Hit = true;
-		ShareNum::HitCount = 0;
+		PushKey[0] = true;
+		PushCount[0] = 0;
 	}
 	if (HOLD(CInput::eButton2)) {
-		ShareNum::Hit = true;
-		ShareNum::HitCount = 0;
+		PushKey[1] = true;
+		PushCount[1] = 0;
 	}
 	if (HOLD(CInput::eButton3)) {
-		ShareNum::Hit = true;
-		ShareNum::HitCount = 0;
+		PushKey[2] = true;
+		PushCount[2] = 0;
 	}
 	if (HOLD(CInput::eButton4)) {
-		ShareNum::Hit = true;
-		ShareNum::HitCount = 0;
+		PushKey[3] = true;
+		PushCount[3] = 0;
 	}
 	//std::cout << ShareNum::HitCount << std::endl;
 }	
@@ -113,9 +124,23 @@ Play::~Play() {
 void Play::ImageSet() {
 	Lane = COPY_RESOURCE("Lane", CImage);
 	NotesBar = COPY_RESOURCE("NotesBar", CImage);
-	NotesBarBlue = COPY_RESOURCE("NotesBarBlue", CImage);
+	for (int i = 0; i < 4; i++) {
+		NotesBarBlue[i] = COPY_RESOURCE("NotesBarBlue", CImage);
+	}
+	NotesBarBlue[0].SetRect(0, 0, 243, 1080);
+	NotesBarBlue[1].SetRect(243, 0, 483, 1080);
+	NotesBarBlue[2].SetRect(483, 0, 723, 1080);
+	NotesBarBlue[3].SetRect(723, 0, 980, 1080);
+	NotesBarBlue[0].SetPos(0, 0);
+	NotesBarBlue[1].SetPos(243, 0);
+	NotesBarBlue[2].SetPos(483, 0);
+	NotesBarBlue[3].SetPos(723, 0);
+	NotesBarBlue[0].SetSize(243, 1080);
+	NotesBarBlue[1].SetSize(240, 1080);
+	NotesBarBlue[2].SetSize(240, 1080);
+	NotesBarBlue[3].SetSize(257, 1080);
 	LeftClick= COPY_RESOURCE("LeftClick", CImage);
-	m_NotesBar = NotesBar;
+	//m_NotesBar = NotesBar;
 }
 void Play::Baby() {
 	video->Play();
