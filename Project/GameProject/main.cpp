@@ -110,6 +110,7 @@ void Init(void)
 	ADD_RESOURCE("TapS", CImage::CreateImage("Image/S.png"));
 	ADD_RESOURCE("TapD", CImage::CreateImage("Image/D.png"));
 	ADD_RESOURCE("TapF", CImage::CreateImage("Image/F.png"));
+	ADD_RESOURCE("LeftClick", CImage::CreateImage("Image/LeftClick.png"));
 	SOUND("Tap")->Load("Sound/TapSound.wav", 10);
 	SOUND("LeanOn")->Load("Sound/LeanOn.wav");
 	SOUND("Baby")->Load("Sound/Baby.wav");

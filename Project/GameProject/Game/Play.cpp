@@ -10,7 +10,7 @@
 #include <fstream>
 #include "../Base/Base.h"
 Play::Play(int ChoiceSound) : Base(eType_Play),
-score_text("C:\\Windows\\Fonts\\msgothic.ttc", 64) {
+score_text("C:\\Windows\\Fonts\\msgothic.ttc", 64){
 	glClearColor(0, 0, 0, 0);
 	CountDownToStart = 190;
 	CountUpToEnd = 0;
@@ -34,6 +34,7 @@ void Play::Draw() {
 	}
 	Lane.Draw();
 	NotesBar.Draw();
+	LeftClick.Draw();
 }
 void Play::Update() {
 	CountDownToStart--;
@@ -87,6 +88,7 @@ Play::~Play() {
 void Play::ImageSet() {
 	Lane = COPY_RESOURCE("Lane", CImage);
 	NotesBar = COPY_RESOURCE("NotesBar", CImage);
+	LeftClick= COPY_RESOURCE("LeftClick", CImage);
 }
 void Play::Baby() {
 	video->Play();

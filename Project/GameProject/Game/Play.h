@@ -10,6 +10,7 @@ private:
 	};
 	CImage Lane;
 	CImage NotesBar;
+	CImage LeftClick;
 	CVideo* video;
 	CFont score_text;
 	int CountDownToStart;
