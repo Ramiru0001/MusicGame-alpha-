@@ -43,4 +43,5 @@ public:
 	void RCheckHitNotes();
 	void RArea(int x,int y);
 	void CountDownToDelete();
+	void LNotesDelete();
 };

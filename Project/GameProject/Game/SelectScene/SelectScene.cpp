@@ -11,10 +11,11 @@ SelectScene::SelectScene() :Base(eType_Scene)
 	ShareNum::GameNum = 0;
 	ShareNum::debug = false;
 	Base::Add(new Ranking(0));
-	BackGround = COPY_RESOURCE("FoxLandcape", CImage);
-	BackGround.SetRect(0, 300, 1024, 900);
-	BackGround.SetSize(1920, 1080);
+	ImageSet();
 	SoundPlay();
+}
+SelectScene::~SelectScene() {
+	SoundStop();
 }
 void SelectScene::Draw() {
 	BackGround.Draw();
@@ -76,4 +77,9 @@ void SelectScene::SoundStop() {
 		SOUND("LeanOn")->Stop();
 		SOUND("Baby")->Stop();
 		SOUND("Bones")->Stop();
+}
+void SelectScene::ImageSet() {
+	BackGround = COPY_RESOURCE("FoxLandcape", CImage);
+	BackGround.SetRect(0, 300, 1024, 900);
+	BackGround.SetSize(1920, 1080);
 }

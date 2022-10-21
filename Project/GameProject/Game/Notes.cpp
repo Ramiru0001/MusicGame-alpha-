@@ -95,6 +95,7 @@ void Notes::Update() {
 		}
 		break;
 	}
+	LNotesDelete();
 	Timer();
 }
 void Notes::LCheckHitNotes() {
@@ -234,5 +235,10 @@ void Notes::CountDownToDelete() {
 		if (RNotesCountToDelete <= 0) {
 			m_kill = true;
 		}
+	}
+}
+void Notes::LNotesDelete() {
+	if (m_pos.y >= 1150) {
+		m_kill = true;
 	}
 }

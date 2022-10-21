@@ -18,8 +18,10 @@ private:
 	CFont PushEnter_Text;
 public:
 	SelectScene();
+	~SelectScene();
 	void Draw();
 	void Update();
+	void ImageSet();
 	void SoundPlay();
 	void SoundStop();
 };
