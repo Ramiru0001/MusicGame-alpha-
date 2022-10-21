@@ -68,12 +68,16 @@ void Play::Update() {
 Play::~Play() {
 	std::ofstream Lfile("Score/LeanOn.txt", std::ios_base::app | std::ios_base::in);
 	std::ofstream Bfile("Score/Baby.txt", std::ios_base::app | std::ios_base::in);
+	std::ofstream Bofile("Score/Baby.txt", std::ios_base::app | std::ios_base::in);
 	switch (ShareNum::GameNum) {
 	case eNum_LeanOn:
 		Lfile << ShareNum::score << std::endl;
 		break;
 	case eNum_Baby:
 		Bfile << ShareNum::score << std::endl;
+		break;
+	case eNum_Bones:
+		Bofile << ShareNum::score << std::endl;
 		break;
 	}
 	video->Stop();

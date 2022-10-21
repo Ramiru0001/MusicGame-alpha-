@@ -20,4 +20,6 @@ public:
 	SelectScene();
 	void Draw();
 	void Update();
+	void SoundPlay();
+	void SoundStop();
 };

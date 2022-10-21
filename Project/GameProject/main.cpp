@@ -107,6 +107,9 @@ void Init(void)
 	ADD_RESOURCE("Square4", CImage::CreateImage("Image/Square4.png"));
 	ADD_RESOURCE("FoxLandcape", CImage::CreateImage("Image/landscape2.png"));
 	SOUND("Tap")->Load("Sound/TapSound.wav", 10);
+	SOUND("LeanOn")->Load("Sound/LeanOn.wav");
+	SOUND("Baby")->Load("Sound/Baby.wav");
+	SOUND("Bones")->Load("Sound/Bones.wav");
 	Base::Add(new Title());
 	
 }
